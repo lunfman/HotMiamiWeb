@@ -1,5 +1,5 @@
 .scroller {
-    height: 300px;
+    height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }
