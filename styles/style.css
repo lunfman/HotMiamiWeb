@@ -71,23 +71,76 @@ video#bgvideo {
     align-items: flex-start;
     /* justify-content: center; */
     justify-content: start;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("https://thumbs.gfycat.com/AcclaimedDistantCapeghostfrog-max-1mb.gif");
+    background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),    url("https://cdn.vox-cdn.com/thumbor/lsvKWScLlH-e2SwsURTrCq77Qvc=/0x0:1440x768/1200x800/filters:focal(605x269:835x499)/cdn.vox-cdn.com/uploads/chorus_image/image/61159511/hlm2_screen_5.0.1488285215.0.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     color: white;
-    
+}
+
+#hero-image-2{
+    height:100vh;
+    width:100%;
+    display:flex;
+    align-items: flex-start;
+    /* justify-content: center; */
+    justify-content: start;
+    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),    url("https://preview.redd.it/dlsjtbqhete71.jpg?auto=webp&s=a607a7dd97640de2e0634cc0aa2c63a23d86c233");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
 }
 
 
-/* .box{
-    color: black;
-    padding: 3%;
-    width: 100%;
-    background-color: white;
-    opacity: 90%;
-} */
+.box{
+    margin-top: 200px;
+    margin-left: 30px;
+    color: white;
+    padding: 30px 15px;
+    width: 300px;
+    /* background-color: black; */
+    background-color: rgba(0, 0, 0, 0.55);
+    /* opacity: 70%; */
+    position: relative;
+}
+
+.box-title-right{
+    position: absolute;
+    top: -20px;
+    left: -120px;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    white-space: nowrap;
+}
+
+.box-right{
+    margin-left: auto; 
+    margin-right: 30px;    
+    margin-top: 200px;
+    color: white;
+    padding: 30px 15px;
+    width: 300px;
+    /* background-color: black; */
+    background-color: rgba(0, 0, 0, 0.55);
+    /* opacity: 70%; */
+    position: relative;
+    text-align: center;
+}
+
+.box-title{
+    position: absolute;
+    top: -20px;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    white-space: nowrap;
+}
+
+.box-content{
+    padding-top: 20px;
+}
 
 #left{
     align-items:left;
@@ -158,3 +211,29 @@ ul{
     overflow: hidden;
     z-index: 2;
 } */
+
+#hero-footer{
+    height:100vh;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
+    background-color: black;
+}
+
+svg{
+    fill:white;
+    width: 300px;
+    height: 300px;
+}
+
+svg:hover {
+    fill: red;
+  }  
