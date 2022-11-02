@@ -182,6 +182,7 @@ img.sticky {
     bottom: 13%;
     right: 15%;
     padding: 1%;
+    display: none;
 }
 
 .container{
