@@ -149,9 +149,9 @@ img.sticky {
     overflow: hidden;
     z-index: 2;
     position: fixed;
-    width: 10%;
-    bottom: 13%;
-    right: 15%;
+    width: 150px;
+    bottom: 100px;
+    right: 230px;
     padding: 1%;
     display: none;
 }
