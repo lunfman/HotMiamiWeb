@@ -1,5 +1,7 @@
 const scroller = document.querySelector('.scroller');
 const talkBox = document.querySelector('.talk-box')
+const mask = document.querySelector('.mask')
+
 const timeCutOff = 30
 let usersScreenHeight = document.documentElement.clientHeight
 let currentPosition = 'home'
@@ -27,7 +29,8 @@ const messages = {
         1: ['asdddsa', 'page 21 s'],
         2: ['Iasddad', 'Scroll down adsads'],
         3: ['Are you asdasddasas?']
-    }
+    },
+    other: ['come one']
 }
 
 const startPageTimer = (page) => {
@@ -37,10 +40,12 @@ const startPageTimer = (page) => {
 
 const boxPopUp = () => {
     talkBox.style.display = 'block'
+    mask.src="./assets/mask/speak.gif";
 }
 
 const boxHide = () => {
     talkBox.style.display = 'none'   
+    mask.src="./assets/mask/mask.png";
 }
 
 const resetTimer = () => {
@@ -67,7 +72,8 @@ const getMessagesRow = (page) => {
 }
 
 const getComment = (page) => {
-    return messages[page][getMessagesRow(page)].sample()
+    let row = getMessagesRow(page)
+    return row <= 3 ? messages[page][row].sample() : messages['other'].sample()
 }
 
 const countVisitTime = (value) => {
