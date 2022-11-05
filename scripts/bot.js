@@ -34,8 +34,12 @@ const messages = {
 }
 
 const startPageTimer = (page) => {
-    clearTimeout(pageTimer)
+    clearInterval(pageTimer)
     pageTimer = setInterval(countVisitTime ,1000, page)
+}
+
+const countVisitTime = (value) => {
+    timeOnThePage[value] ++
 }
 
 const boxPopUp = () => {
@@ -74,10 +78,6 @@ const getMessagesRow = (page) => {
 const getComment = (page) => {
     let row = getMessagesRow(page)
     return row <= 3 ? messages[page][row].sample() : messages['other'].sample()
-}
-
-const countVisitTime = (value) => {
-    timeOnThePage[value] ++
 }
 
 
