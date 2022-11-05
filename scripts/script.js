@@ -12,8 +12,10 @@ ageForm.addEventListener("submit", function(event) {
     }
     
     if(validate(ageArr)){
-        redirect()
+        redirect("index.html")
+        return
     }
+    redirect("failure.html")
   })
 
 const validate = (arr) => {
@@ -29,8 +31,6 @@ const validate = (arr) => {
     return YearsDiff > 18 ? true : false
 }
 
-const redirect = () => {
-    window.location.replace("index.html");
+const redirect = (path) => {
+    window.location.replace(path);
 }
-
-console.log("working")
