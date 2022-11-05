@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age res</title>
+    <link rel="stylesheet" href="styles/age.css">
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+        </style>
+</head>
+<body>
+    <div id="hero">
+        <div id="box">
+            <div>
+                <p>Please enter your date of birth:</p>
+                <form id="age-form">
+                    <input id="input" required type="number" id="day" name="day" placeholder="Day" size="4">
+                    <input id="input" required type="number" id="month" name="month" placeholder="Month" size="4">
+                    <input id="input" required type="number" id="year" name="year" placeholder="Year" size="4">
+                    <br>
+                    <div id="submit">
+                        <input id="submit" type="submit" value="Submit">
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="./scripts/script.js"></script>
+</html>

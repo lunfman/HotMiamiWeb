@@ -25,38 +25,9 @@ video#bgvideo {
     background-size: cover;
     }
 
-    /* video#bgvideo2 {
-        position: absolute;
-        top: 150%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%; 
-        width: auto;
-        height: auto;
-        z-index: -200;
-        -ms-transform: translateX(-50%) translateY(-50%);
-        -moz-transform: translateX(-50%) translateY(-50%);
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-        /* background: url(https://cdn.cloudflare.steamstatic.com/steam/apps/219150/capsule_616x353.jpg?t=1654232443) no-repeat; */
-        /* background-size: cover; */
-        /* } */
-     
-/* 
-
-.video-title{
-    color:white;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
-
 #hero {
     height:100vh;
     width:100%;
-    /* background:red; */
     display:flex;
     align-items:center;
     justify-content: center;
@@ -178,10 +149,11 @@ img.sticky {
     overflow: hidden;
     z-index: 2;
     position: fixed;
-    width: 10%;
-    bottom: 13%;
-    right: 15%;
+    width: 150px;
+    bottom: 100px;
+    right: 230px;
     padding: 1%;
+    display: none;
 }
 
 .container{
@@ -191,26 +163,6 @@ img.sticky {
     background-color: #f2f2f2;
     justify-content: center;
 }
-
-/* #hero::after  {
-width:100%;
-height:100%;
-content: '';
-position:absolute;
-z-index:10;
-top:0;
-left:0;
-background:rgba(0,0,0,0.5)
-} */
-
-/* 
-ul{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    overflow: hidden;
-    z-index: 2;
-} */
 
 #hero-footer{
     height:100vh;
