@@ -5,7 +5,7 @@ const mask = document.querySelector('.mask')
 const timeCutOff = 30
 let usersScreenHeight = document.documentElement.clientHeight
 let currentPosition = 'home'
-
+let secondPageVisited = false
 // https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array Ben Aubin
 // lisame pythoni sarnast funktisooni .choice() 
 Array.prototype.sample = function(){
@@ -16,13 +16,27 @@ const timeOnThePage = {
     home: 0,
     second: 0,
 }
-
+// https://en.wikiquote.org/wiki/Hotline_Miami
 const messages = {
     home:{
-        0: ['Hi, there welcome to blood bath', 'Hi, I am the boss of this page'],
-        1: ['Let s whatch it again', 'You know if you like this trailer than you might light the game'],
-        2: ['It looks like your really like this trailer', 'Scroll down dammit'],
-        3: ['Are you bot?']
+        0: [
+            'Who invited all these morons?',
+            'Man, this party stinks. I fucking hate these people',
+            'Do you like hurting other people?',
+            "Look at my face. We've met before...",
+            "You're no guest of mine!"
+        ],
+        1: [
+            'Let s whatch it again',
+            'You know if you like this trailer than you might light the game'
+        ],
+        2: [
+            'It looks like your really like this trailer',
+            'Scroll down dammit'],
+        3: [
+            'Are you bot?',
+            ' Where are you right now?',
+            'Why are we having this conversation?']
     },
     second:{
         0: ['No second chance, Just die'],
@@ -30,7 +44,7 @@ const messages = {
         2: ['Iasddad', 'Scroll down adsads'],
         3: ['Are you asdasddasas?']
     },
-    other: ['come one']
+    other: ['come one', "Some things work out best when you don't try so hard.", "You don't look well, sir. Are you alright?"]
 }
 
 const startPageTimer = (page) => {
@@ -68,7 +82,7 @@ const talk = () => {
 
 const talkStraight = () => {
     resetTimer()
-    timer = setInterval(talk, 500)
+    timer = setInterval(talk, 1000)
 }
 
 const getMessagesRow = (page) => {
@@ -90,32 +104,24 @@ const  scrollEvent =  () => {
     if(scroller.scrollTop == 1){
         currentPosition = 'home'
         startPageTimer('home')
-        boxHide()
     }
     if(scroller.scrollTop == usersScreenHeight){
         currentPosition = 'second'
         startPageTimer('second')
-        boxHide()
-        talkStraight()
-        talkBox.textContent   = getComment('second')
-
+        if(!secondPageVisited){
+            talkStraight()
+            secondPageVisited = true
+        }
     }
     if(scroller.scrollTop == usersScreenHeight* 2){
-        currentPosition = 'home'
-        boxHide()
-        talkStraight()
-        talkBox.textContent = getComment('home')
+        currentPosition = 'third'
     }
     if(scroller.scrollTop == usersScreenHeight *3){
         currentPosition = 'forth'
-        boxHide()
-        talkBox.textContent = 'I know these idiots'
     }
   }
   
 scroller.addEventListener('scroll', scrollEvent);
-
-console.log(document.documentElement.clientHeight)
 
 window.addEventListener('resize', function() {
     usersScreenHeight = document.documentElement.clientHeight
