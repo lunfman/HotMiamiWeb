@@ -72,7 +72,7 @@ div.inline{
     /* align-items: flex-end; */
     justify-content: space-around;
     padding: 1%;
-    margin-left: 1em;
+    margin-left: 4px;
 }
 
 div.inline h1{
@@ -86,7 +86,7 @@ div.inline h1{
 
 div.inline p{
     color: white;
-    margin-left: 10px;
+    margin-left: 2px;
     margin-top: 6px;
 }
 

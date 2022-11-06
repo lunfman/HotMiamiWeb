@@ -91,10 +91,11 @@ const getMessagesRow = (page) => {
 
 const getComment = (page) => {
     let row = getMessagesRow(page)
+    // if row do not exists will run other sample
     return row <= 3 ? messages[page][row].sample() : messages['other'].sample()
 }
 
-
+// init timer and home timer
 let timer = setInterval(talk, 2000)
 let pageTimer, boxTimeOut
 startPageTimer('home')
