@@ -3,6 +3,7 @@ body, header, nav, main, footer{
     padding: 0;
     border: 0;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 
@@ -76,6 +77,7 @@ video#bgvideo {
     background-color: rgba(0, 0, 0, 0.55);
     /* opacity: 70%; */
     position: relative;
+
 }
 
 .box-title-right{
@@ -85,6 +87,7 @@ video#bgvideo {
     font-size: 3.5rem;
     line-height: 3.5rem;
     white-space: nowrap;
+    
 }
 
 .box-right{
@@ -189,3 +192,24 @@ svg{
 svg:hover {
     fill: red;
   }  
+
+/* https://alvarotrigo.com/blog/css-animations-scroll/ */
+
+.reveal.right{
+position: relative;
+transform: translateX(-100px);
+opacity: 0;
+transition: 1s all ease;
+}
+
+.reveal.left{
+    position: relative;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active{
+transform: translateX(0);
+opacity: 1;
+}
