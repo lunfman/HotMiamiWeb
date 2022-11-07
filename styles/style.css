@@ -36,7 +36,7 @@ video#bgvideo {
     overflow: hidden;
 }
 
-#hero-image, #hero-image-2, #hero-footer{
+#hero-image, #hero-image-2,#hero-image-3, #hero-footer{
     height:100vh;
     width:100%;
     display:flex;
@@ -54,7 +54,11 @@ video#bgvideo {
 }
 
 #hero-image-2{
-    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),    url("https://preview.redd.it/dlsjtbqhete71.jpg?auto=webp&s=a607a7dd97640de2e0634cc0aa2c63a23d86c233");
+    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),    url("https://media.moddb.com/images/mods/1/38/37508/SUBWAY.jpg");
+}
+
+#hero-image-3{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),    url("https://3dnews.ru/assets/external/illustrations/2019/08/20/992757/HotlineMiamiCollection_1.jpg");
 }
 
 
@@ -63,7 +67,9 @@ video#bgvideo {
     margin-left: 30px;
     color: white;
     padding: 30px 15px;
-    width: 300px;
+    width: 400px;
+    line-height: 28px;
+    letter-spacing: 1px;
     /* background-color: black; */
     background-color: rgba(0, 0, 0, 0.55);
     /* opacity: 70%; */
@@ -74,7 +80,7 @@ video#bgvideo {
 .box-title-right{
     position: absolute;
     top: -20px;
-    left: -120px;
+    left: -170px;
     font-size: 3.5rem;
     line-height: 3.5rem;
     white-space: nowrap;
@@ -87,18 +93,21 @@ video#bgvideo {
     margin-top: 200px;
     color: white;
     padding: 30px 15px;
-    width: 300px;
+    width: 400px;
     background-color: rgba(0, 0, 0, 0.55);
     position: relative;
-    text-align: center;
+    line-height: 28px;
+    letter-spacing: 1px;
 }
 
 .box-title{
     position: absolute;
     top: -20px;
+    /* 2.5 on mobile should be ok */
     font-size: 3.5rem;
     line-height: 3.5rem;
     white-space: nowrap;
+    
 }
 
 .box-content{
