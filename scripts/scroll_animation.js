@@ -20,5 +20,4 @@ const revealContent = () => {
 }
 
 
-
 scroller.addEventListener('scroll', revealContent);
