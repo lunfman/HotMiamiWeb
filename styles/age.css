@@ -7,9 +7,9 @@ body{
     padding: 0;
     color: white;
     font-family: Retro; text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
-    font-size: 17px;
-    letter-spacing: 1px;
-    line-height: 28px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 40px;
 }
 #hero {
     height:100vh;
@@ -37,7 +37,7 @@ body{
     width: 2500px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 50px;
+    padding: 10px;
 }
 #submit-button{
     font-family: Retro;
@@ -51,7 +51,7 @@ body{
     display: inline;
     width: 240px;
     font-size: 14px;
-    margin: 30px auto 0;
+    margin: 30px auto 30px;
     cursor: pointer;
 }
 #input {
