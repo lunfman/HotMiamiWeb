@@ -19,3 +19,8 @@ Meie eesmärgid:
 2. Saada 15 punkti.
 3. Õppida. Provida midagi uut.
 4. Luua vinge lehe.
+
+Meie inspiratsiooniveenilehed:
+https://perturbator.com
+https://slipknot1.com
+https://www.myfriendpedro.com/
