@@ -36,7 +36,7 @@ video#bgvideo {
     overflow: hidden;
 }
 
-#hero-image, #hero-image-2,#hero-image-3, #hero-footer{
+#hero-image, #hero-image-2,#hero-image-3, #hero-footer, #hero-music{
     height:100vh;
     width:100%;
     display:flex;
@@ -77,14 +77,19 @@ video#bgvideo {
 
 }
 
-.box-title-right{
-    position: absolute;
-    top: -20px;
-    left: -170px;
+.box-title-right, .box-title{
     font-size: 3.5rem;
     line-height: 3.5rem;
+    position: absolute;
+}
+
+.box-title-right{
+    /* position: absolute; */
+    top: -20px;
+    left: -170px;
+    /* font-size: 3.5rem;
+    line-height: 3.5rem; */
     white-space: nowrap;
-    
 }
 
 .box-right{
@@ -101,11 +106,11 @@ video#bgvideo {
 }
 
 .box-title{
-    position: absolute;
+    /* position: absolute; */
     top: -20px;
     /* 2.5 on mobile should be ok */
-    font-size: 3.5rem;
-    line-height: 3.5rem;
+    /* font-size: 3.5rem;
+    line-height: 3.5rem; */
     white-space: nowrap;
     
 }
@@ -155,6 +160,22 @@ img.sticky {
     justify-content: center;
 }
 
+#hero-music{
+    /* flex-direction: row; */
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+#hero-music img{
+    max-width: 100%;
+    width: 500px;
+    mix-blend-mode: difference;
+
+}
+
 #hero-footer{
     flex-direction: column;
     align-items: center;
@@ -193,3 +214,66 @@ transition: 1s all ease;
 transform: translateX(0);
 opacity: 1;
 }
+
+
+@media only screen and (max-width: 798px) {
+    .box-title, .box-title-right {
+        font-size: 3rem;
+    }
+
+    .box-title-right {
+        left: -100px;
+    }
+    .box-content{
+        padding-top: 10px;
+    }
+
+  }
+  @media only screen and (max-width: 691px) {
+    .box-title, .box-title-right {
+        font-size: 2rem;
+    }
+
+    .box-title-right {
+        left: 10px;
+    }
+
+    img.sticky{
+        width: 150px;
+    }
+
+    .talk-box{
+        right: 180px;
+        bottom: 80px;
+    }
+
+
+    .box-content{
+        padding-top: 2px;
+    }
+
+  }
+
+@media only screen and (max-width: 500px) {
+    .box-title, .box-title-right {
+        font-size: 1.5rem;
+    }
+
+    .box{
+        margin-left: 0px;
+    }
+
+  }
+/* 
+@media only screen and (max-width: 826px) {
+    .box-title {
+        font-size: 2.5rem;
+    }
+
+  } */
+
+/* @media only screen and (min-width: 821px) {
+    #nav-title{
+        width: 30%;
+    }
+  } */
