@@ -21,6 +21,7 @@ Meie eesmärgid:
 4. Luua vinge lehe.
 
 Meie inspiratsiooniveenilehed:
+
 https://perturbator.com
 
 https://slipknot1.com
