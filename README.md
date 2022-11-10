@@ -22,5 +22,7 @@ Meie eesmärgid:
 
 Meie inspiratsiooniveenilehed:
 https://perturbator.com
+
 https://slipknot1.com
+
 https://www.myfriendpedro.com/
