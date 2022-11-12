@@ -248,4 +248,9 @@ opacity: 1;
         margin-left: 0px;
     }
 
+    svg{
+        width: 150px;
+        height: 150px;
+    }
+
   }
