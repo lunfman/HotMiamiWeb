@@ -21,16 +21,16 @@ nav {
 }
 
 nav ul{
-    background-color: white;
+    display: flex;
+    gap: 1px;
+    background-color: white; 
 }
 
 nav li {
     list-style: none;
     padding: 0 20px;
     height: 4.5em;
-    line-height: 50px;
     background-color: red;
-    margin-right: -4px;
     text-align: center;
     display: inline-flex;
     flex-direction: row;
@@ -46,7 +46,7 @@ nav a {
 }
 
 nav li:hover {
-    background-color: rgb(227, 54, 54);
+    background-color: rgb(245, 72, 72);
 }
 
 nav li:hover a{
@@ -76,6 +76,7 @@ div.inline{
     padding-left: 10%;
     /* padding: 1%; */
     margin-left: 4px;
+    
 }
 
 div.inline h1{
