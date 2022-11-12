@@ -118,9 +118,9 @@ const setPageVisit = (page) => {
     if(!pageVisit[page]){
         talkStraight()
         pageVisit[page] = true
-        return
+
     }
-    return
+
 }
 
 const setPagePosition = (page) => {
@@ -139,16 +139,16 @@ const  scrollEvent =  () => {
     if(scroller.scrollTop == 1){
         setPagePosition('home')
     }
-    if(scroller.scrollTop == usersScreenHeight){
+    if(scroller.scrollTop >= usersScreenHeight){
         setPagePosition('second')
     }
-    if(scroller.scrollTop == usersScreenHeight * 2){
+    if(scroller.scrollTop >= usersScreenHeight * 2){
         setPagePosition('third')
     }
-    if(scroller.scrollTop == usersScreenHeight * 3){
+    if(scroller.scrollTop >= usersScreenHeight * 3){
         setPagePosition('fourth')
     }
-    if(scroller.scrollTop == usersScreenHeight * 4){
+    if(scroller.scrollTop >= usersScreenHeight * 4){
         setPagePosition('fifth')
     }
   }
@@ -157,5 +157,4 @@ scroller.addEventListener('scroll', scrollEvent);
 
 window.addEventListener('resize', function() {
     usersScreenHeight = document.documentElement.clientHeight
-    talkStraight()
 }, true);
