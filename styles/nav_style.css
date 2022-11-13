@@ -129,6 +129,13 @@ nav{
     }
 
   }
+/* iphone */
+  @media only screen and (max-width: 320px) {
+    div.inline{
+        display: none;
+    }
+
+  }
 
 .overlay {
   height: 100%;
@@ -159,6 +166,7 @@ nav{
   color: #818181;
   display: block;
   transition: 0.3s;
+  margin-left: 9px;
 }
 
 .overlay a:hover, .overlay a:focus {
@@ -171,7 +179,6 @@ nav{
   right: 20px;
   font-size: 60px;
 }
-
 @media screen and (max-height: 450px) {
   .overlay a {font-size: 20px}
   .overlay .closebtn {

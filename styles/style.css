@@ -8,10 +8,6 @@ body, header, nav, main, footer{
     -webkit-overflow-scrolling: touch,
 }
 
-/* body{
-    position: relative;
-} */
-
 video#bgvideo {
     position: absolute;
     top: 50%;
@@ -74,19 +70,18 @@ video#bgvideo {
     letter-spacing: 1px;
     background-color: rgba(0, 0, 0, 0.55);
     position: relative;
-
 }
 
 .box-title-right, .box-title{
     font-size: 3.5rem;
     line-height: 3.5rem;
-    position: absolute;
+    /* position: absolute; */
 }
 
 .box-title-right{
     top: -20px;
     left: -170px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .box-right{
@@ -96,7 +91,7 @@ video#bgvideo {
 
 .box-title{
     top: -20px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .box-content{
@@ -215,13 +210,13 @@ opacity: 1;
 
   }
   @media only screen and (max-width: 691px) {
-    .box-title, .box-title-right {
+    /* .box-title, .box-title-right {
         font-size: 2rem;
     }
 
     .box-title-right {
         left: 10px;
-    }
+    } */
 
     img.sticky{
         width: 150px;
@@ -240,8 +235,30 @@ opacity: 1;
   }
 
 @media only screen and (max-width: 500px) {
-    .box-title, .box-title-right {
+    /* .box-title, .box-title-right {
         font-size: 1.5rem;
+    } */
+
+    .box, .box-right{
+        margin-left: 0px;
+        margin-right: 0px;  
+        width: 100%;
+        margin-top: 150px;
+    }
+
+    svg{
+        width: 150px;
+        height: 150px;
+    }
+
+  }
+
+  @media only screen and (max-width: 320px) {
+    .box-title, .box-title-right {
+        font-size: 2.5rem;
+        white-space: pre-wrap;
+        line-height: normal;
+        top: 0px;
     }
 
     .box{
@@ -251,6 +268,14 @@ opacity: 1;
     svg{
         width: 150px;
         height: 150px;
+    }
+
+    .talk-box{
+        z-index: -10;
+    }
+
+    img.sticky{
+        display: none;
     }
 
   }

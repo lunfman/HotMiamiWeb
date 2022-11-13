@@ -3,6 +3,7 @@
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     overflow-x: hidden;
+    scroll-snap-stop: always
 }
 
 .scroller section {
