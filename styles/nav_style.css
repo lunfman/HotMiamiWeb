@@ -102,7 +102,7 @@ nav{
     display: none;
 }
 
-@media only screen and (max-width: 821px) {
+@media only screen and (max-width: 854px) {
     nav li {
         padding: 0 50px;
     }
@@ -117,7 +117,7 @@ nav{
 
   }
 
-@media only screen and (min-width: 821px) {
+@media only screen and (min-width: 854px) {
     #nav-title{
         width: 30%;
     }
