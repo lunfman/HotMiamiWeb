@@ -31,6 +31,8 @@ body{
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-size: contain;
+    min-width: 100%;
+    min-height: 100%;
 }
 #box{
     width: 100%;
