@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Retro';
-    src: url('/assets/font/retro_computer_personal_use.ttf'); /*URL to font*/
+    src: url('../assets/font/retro_computer_personal_use.ttf'); /*URL to font*/
 }
 body{
     margin: 0;
