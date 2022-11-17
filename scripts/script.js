@@ -7,13 +7,18 @@ ageForm.addEventListener("submit", function(event) {
     const data = new FormData(ageForm);
     const ageArr = Array()
 
-    for (const [_,value] of data) {
+    for (const [_, value] of data) {
       ageArr.push(value)
     }
     
     if(validate(ageArr)){
-        redirect()
+        redirect("index.html")
+        localStorage.setItem('age', 'true');
+        return
     }
+    localStorage.setItem('age', 'false');
+    redirect("failure.html")
+    
   })
 
 const validate = (arr) => {
@@ -24,13 +29,12 @@ const validate = (arr) => {
     const date = new Date(year, month-1, day)
     const today = new Date()
     // https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
-    const diffTime = Math.abs(date - today);
-    const YearsDiff = Math.ceil(diffTime / (1000 * 60 * 60 * 24))/360;
-    return YearsDiff > 18 ? true : false
+    const diffTime = today - date;
+    const YearsDiff = diffTime / (1000 * 60 * 60 * 24)/360;
+
+    return YearsDiff > 18 && YearsDiff < 100 ? true : false
 }
 
-const redirect = () => {
-    window.location.replace("index.html");
+const redirect = (path) => {
+    window.location.replace(path);
 }
-
-console.log("working")

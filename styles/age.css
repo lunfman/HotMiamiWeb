@@ -1,34 +1,65 @@
+@font-face {
+    font-family: 'Retro';
+    src: url('../assets/font/retro_computer_personal_use.ttf'); /*URL to font*/
+}
 body{
     margin: 0;
     padding: 0;
+    color: white;
+    font-family: Retro; text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 40px;
 }
-#hero{
+#hero {
     height:100vh;
     width:100%;
     display:flex;
-    align-items: center;
+    align-items:center;
     justify-content: center;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),    url("../agecheck.gif");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
-    color: white;
+    overflow: hidden;
+    background:rgba(0, 0, 0, 0.75);
+}
+#bgvideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    width: auto;
+    height: auto;
+    z-index: -1;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-size: contain;
+    min-width: 100%;
+    min-height: 100%;
 }
 #box{
-    width: 250px;
+    width: 100%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
 }
-#submit{
-    text-align: center; margin-top: 10px;
+#submit-button{
+    font-family: Retro;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    color: white;
+    padding: 10px 0px;
+    width: 240px;
+    font-size: 14px;
+    margin: 30px auto 30px;
+    cursor: pointer;
 }
-#input{
-    height: 35px; max-width: 25%;
-    margin: 0 5px;
+#input {
+    font-family: Retro; color: white;
+    height: 50px;
+    max-width: 100px;
+    margin: 0px 2px;
+    cursor: text;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0px 10px;
+    border-width: 0px;
+    transition-duration: .3s;
 }
-/* #age-form{
-    width: 500px;
-    
-} */
