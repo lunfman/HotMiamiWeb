@@ -6,6 +6,8 @@ let open = false
 
 const openMenu = () => {
     //  open pop up menu function
+    // by change style width from 0 to 100
+    // if user click again on buy btn than it will close
     open ? menu.style.width = '0%' : menu.style.width = '100%'
     toggle()
 }
