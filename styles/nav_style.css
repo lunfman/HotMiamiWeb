@@ -42,7 +42,7 @@ nav a {
     color: white;
     transition: all 0.3s ease 0s;
     font-size: large;
-    transition: transform 0.2s;
+    transition: transform 0.1s;
     letter-spacing: 2px;
 }
 
@@ -62,7 +62,7 @@ nav li:hover img{
     height: 40px;
     color: black;
     margin-right: 10px;
-    transition: transform 0.2s;
+    transition: transform 0.1s;
 }
 
 #nav-sub{
