@@ -155,7 +155,7 @@ nav{
   top: 12%;
   width: 100%;
   text-align: left;
-  margin-top: 30px;
+  margin-top: 70px;
   margin-left: 2%;
 }
 
@@ -179,11 +179,11 @@ nav{
   right: 20px;
   font-size: 60px;
 }
-@media screen and (max-height: 450px) {
+/* @media screen and (max-height: 450px) {
   .overlay a {font-size: 20px}
   .overlay .closebtn {
   font-size: 40px;
   top: 15px;
   right: 35px;
   } 
-}
+} */

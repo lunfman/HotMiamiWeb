@@ -167,6 +167,9 @@ const  scrollEvent =  () => {
     // scroll event function which is trigered on scroll
     // this function also check on which page user located at this moment and allow to 
     // trigger diffirent events based on position on the page 
+
+    // to get page diff we use simple math if we know users screen height than second page this value by 2
+    // ofcourse there is a lot of diffirent oportunietises to create this functionality
     if(scroller.scrollTop == 1){
         setPagePosition('home')
     }
