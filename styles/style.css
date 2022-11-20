@@ -123,11 +123,12 @@ img.sticky {
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
+  transition-duration: 2s;
 }
 .fade-out {
   animation: splash 1s normal forwards ease-in-out;
   animation-name: fadein;
-  animation-duration: 1000ms;
+  animation-duration: 2000ms;
 }
 
 .fade-in-2 {
@@ -170,6 +171,7 @@ img.sticky {
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  transition-duration: 3s;
 }
 
 #hero-music .album:hover {
@@ -263,6 +265,13 @@ svg:hover {
   transform: translateX(100px);
   opacity: 0;
   transition: 1s all ease;
+}
+
+.reveal.left-2 {
+  position: relative;
+  transform: translateX(300px);
+  opacity: 0;
+  transition: 6s all ease;
 }
 
 .hide.right {
