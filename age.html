@@ -12,34 +12,32 @@
         input::-webkit-inner-spin-button {
           -webkit-appearance: none;
           margin: 0;
-        }
-        
+        }        
         /* Firefox */
         input[type=number] {
           -moz-appearance: textfield;
         }
         </style>
 </head>
-
 <body>
      <section id="hero">
         <video autoplay loop muted width="100%" id="bgvideo">
             <source src="./assets/video/loadingscreen.mp4" type="video/mp4" playsinline>
         </video>
-
         <div id="box">
-            <div>
-                <p>Enter your date of birth:</p>
-                <form id="age-form">
-                    <input id="input" required type="number" id="day" name="day" placeholder="Day" size="4">
-                    <input id="input" required type="number" id="month" name="month" placeholder="Month" size="4">
-                    <input id="input" required type="number" id="year" name="year" placeholder="Year" size="4">
-                    <br>                            
-                    <input id="submit-button" type="submit" value="Submit">                            
-                </form>            
-            </div>
+            <p>Enter your date of birth:</p>
+            <form id="age-form">
+                <input id="input" required type="number" id="day" name="day" placeholder="Day" size="4">
+                <input id="input" required type="number" id="month" name="month" placeholder="Month" size="4">
+                <input id="input" required type="number" id="year" name="year" placeholder="Year" size="4">
+                <br>
+                <form>
+                    <input type="submit" id="submit-button" value="Submit"> 
+                </form>
+                <!-- <input id="submit-button" value="Submit">                             -->
+            </form>            
+        </div>
     </section>
-    
 </body>
 <script src="./scripts/script.js"></script>
 </html>

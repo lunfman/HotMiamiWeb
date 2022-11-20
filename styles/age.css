@@ -1,4 +1,4 @@
-@font-face {
+@font-face{
     font-family: 'Retro';
     src: url('../assets/font/retro_computer_personal_use.ttf'); /*URL to font*/
 }
@@ -11,7 +11,7 @@ body{
     letter-spacing: 2px;
     line-height: 40px;
 }
-#hero {
+#hero{
     height:100vh;
     width:100%;
     display:flex;
@@ -21,7 +21,7 @@ body{
     overflow: hidden;
     background:rgba(0, 0, 0, 0.75);
 }
-#bgvideo {
+#bgvideo{
     position: absolute;
     top: 50%;
     left: 50%;    
@@ -52,7 +52,7 @@ body{
     margin: 30px auto 30px;
     cursor: pointer;
 }
-#input {
+#input{
     font-family: Retro; color: white;
     height: 50px;
     max-width: 100px;
@@ -62,4 +62,43 @@ body{
     padding: 0px 10px;
     border-width: 0px;
     transition-duration: .3s;
+}
+#goback{
+    font-family: Retro;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    color: white;
+    padding: 15px 0px;
+    width: 120px;
+    font-size: 14px;
+    margin: 5px;
+    cursor: pointer;
+}
+#boxfailure{
+    line-height: 35px;
+    text-align: center;
+}
+/* @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+.linear-wipe{
+    --bg-size: 300%;
+    --color-one: rgba(247,101,184);
+    --color-two: rgba(39,253,245);
+    font-size: 20px;
+    font-family: Retro;
+    background: linear-gradient(
+                90deg,
+                var(--color-one),
+                var(--color-two),
+                var(--color-one)
+              ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 8s infinite linear;
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.5) 
 }
