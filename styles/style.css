@@ -284,6 +284,13 @@ svg:hover {
   transition: 1s all ease;
 }
 
+.hide.right {
+  position: relative;
+  transform: translateX(-300px);
+  opacity: 0;
+  transition: 5s all ease;
+}
+
 .reveal.top {
   position: relative;
   /* transform: translateY(50x); */
