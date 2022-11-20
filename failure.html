@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age res</title>
+    <link rel="stylesheet" href="styles/age.css">
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }        
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+        </style>
+</head>
+<body>
+    <section id="hero">
+      <video playsinline autoplay muted loop poster="../assets/video/failure.gif" id="bgvideo" width="x" height="y"></video>
+       <div id="boxfailure">
+           <div>
+                <p>Hmm...</p>
+                <p>Looks like you're not old enough yet.</p>  
+                <p>Give it one more try?</p>                 
+              <input id="goback" type="submit" value="Go Back" onclick="window.location.href='age.html'">           
+            </div>
+          </div>
+      </section>   
+</body>
+</html>
