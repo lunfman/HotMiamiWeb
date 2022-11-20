@@ -1,191 +1,383 @@
-body, header, nav, main, footer{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    scroll-behavior: smooth;
+body,
+header,
+nav,
+main,
+footer {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
-
-body{
-    position: relative;
-}
 video#bgvideo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%; 
-    width: auto;
-    height: auto;
-    z-index: -1;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
-    }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+}
 
 #hero {
-    height:100vh;
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-#hero-image{
-    height:100vh;
-    width:100%;
-    display:flex;
-    align-items: flex-start;
-    /* justify-content: center; */
-    justify-content: start;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),    url("https://cdn.vox-cdn.com/thumbor/lsvKWScLlH-e2SwsURTrCq77Qvc=/0x0:1440x768/1200x800/filters:focal(605x269:835x499)/cdn.vox-cdn.com/uploads/chorus_image/image/61159511/hlm2_screen_5.0.1488285215.0.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: white;
+#hero-image,
+#hero-image-2,
+#hero-image-3,
+#hero-footer,
+#hero-music {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: white;
 }
 
-#hero-image-2{
-    height:100vh;
-    width:100%;
-    display:flex;
-    align-items: flex-start;
-    /* justify-content: center; */
-    justify-content: start;
-    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),    url("https://preview.redd.it/dlsjtbqhete71.jpg?auto=webp&s=a607a7dd97640de2e0634cc0aa2c63a23d86c233");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: white;
+#hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("https://cdn.vox-cdn.com/thumbor/lsvKWScLlH-e2SwsURTrCq77Qvc=/0x0:1440x768/1200x800/filters:focal(605x269:835x499)/cdn.vox-cdn.com/uploads/chorus_image/image/61159511/hlm2_screen_5.0.1488285215.0.png");
 }
 
-
-.box{
-    margin-top: 200px;
-    margin-left: 30px;
-    color: white;
-    padding: 30px 15px;
-    width: 300px;
-    /* background-color: black; */
-    background-color: rgba(0, 0, 0, 0.55);
-    /* opacity: 70%; */
-    position: relative;
+#hero-image-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("https://media.moddb.com/images/mods/1/38/37508/SUBWAY.jpg");
 }
 
-.box-title-right{
-    position: absolute;
-    top: -20px;
-    left: -120px;
-    font-size: 3.5rem;
-    line-height: 3.5rem;
-    white-space: nowrap;
+#hero-image-3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+    url("https://3dnews.ru/assets/external/illustrations/2019/08/20/992757/HotlineMiamiCollection_1.jpg");
 }
 
-.box-right{
-    margin-left: auto; 
-    margin-right: 30px;    
-    margin-top: 200px;
-    color: white;
-    padding: 30px 15px;
-    width: 300px;
-    /* background-color: black; */
-    background-color: rgba(0, 0, 0, 0.55);
-    /* opacity: 70%; */
-    position: relative;
-    text-align: center;
+.box,
+.box-right {
+  margin-top: 200px;
+  margin-left: 30px;
+  color: white;
+  padding: 30px 15px;
+  width: 400px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0.55);
+  position: relative;
 }
 
-.box-title{
-    position: absolute;
-    top: -20px;
-    font-size: 3.5rem;
-    line-height: 3.5rem;
-    white-space: nowrap;
+.box-title-right,
+.box-title {
+  font-size: 3.5rem;
+  line-height: 3.5rem;
 }
 
-.box-content{
-    padding-top: 20px;
+.box-title-right {
+  top: -20px;
+  left: -170px;
 }
 
-#left{
-    align-items:left;
-    justify-content: left;
+.box-right {
+  margin-left: auto;
+  margin-right: 30px;
 }
 
-#logo{
-    width: 50%;
+.box-title {
+  top: -20px;
 }
 
+.box-content {
+  padding-top: 20px;
+}
+
+#left {
+  align-items: left;
+  justify-content: left;
+}
+
+#logo {
+  width: 50%;
+}
 
 img.sticky {
-    /* position: -webkit-sticky;
-    position: sticky;
-    bottom: 50px;
-    z-index: 1000;
-    padding: 25px;
-    width: 100px;
-    height: 100px;
-    background-color: green;
-    float: right;
-    overflow: hidden; */
-    position: fixed;
-    width: 200px;
-    bottom: 10px;
-    right: 10px;
-    overflow: hidden;
-    z-index: 2;
-  }
-
-.talk-box{
-    opacity: 95%;
-    background-color: rgb(59, 56, 56);
-    color: white;
-    overflow: hidden;
-    z-index: 2;
-    position: fixed;
-    width: 150px;
-    bottom: 100px;
-    right: 230px;
-    padding: 1%;
-    display: none;
+  position: fixed;
+  width: 200px;
+  bottom: 10px;
+  right: 10px;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+.fade-out {
+  animation: splash 1s normal forwards ease-in-out;
+  animation-name: fadein;
+  animation-duration: 1000ms;
 }
 
-.container{
-    height: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #f2f2f2;
-    justify-content: center;
+.fade-in-2 {
+  animation: splash 1s normal forwards ease-in-out;
+  animation-name: fadeout;
+  animation-duration: 1000ms;
 }
 
-#hero-footer{
-    height:100vh;
-    width:100%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    justify-content: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: white;
-    background-color: black;
+.talk-box {
+  opacity: 95%;
+  background-color: rgb(59, 56, 56);
+  color: white;
+  overflow: hidden;
+  z-index: 2;
+  position: fixed;
+  width: 150px;
+  bottom: 100px;
+  right: 230px;
+  padding: 1%;
+  display: none;
 }
 
-svg{
-    fill:white;
-    width: 300px;
-    height: 300px;
+#hero-music {
+  flex-direction: column;
+  gap: 30px;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+#hero-music .album {
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  border: solid 2px white;
+  background-size: cover;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#hero-music .album:hover {
+  mix-blend-mode: difference;
+  animation-name: spin;
+}
+
+#hero-music .album:hover .dot {
+  background-color: red;
+}
+
+.outer-background {
+  background-color: red;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  margin-top: 4%;
+  margin-bottom: 2%;
+  border: solid 2px white;
+}
+
+#hero-music img {
+  border-radius: 50%;
+  max-width: 350px;
+  width: 500px;
+  mix-blend-mode: difference;
+  border: solid 2px white;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+}
+
+.music-container {
+  margin: -50px;
+  padding: 0;
+  gap: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.flex-title {
+  font-size: 6vw;
+}
+
+.dot {
+  height: 60px;
+  width: 60px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  left: 40%;
+  top: 40%;
+  z-index: 1;
+  border: solid 3px white;
+}
+
+#hero-footer {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+  background-color: black;
+}
+
+svg {
+  fill: white;
+  width: 300px;
+  height: 300px;
 }
 
 svg:hover {
-    fill: red;
-  }  
+  fill: red;
+}
+
+/* https://alvarotrigo.com/blog/css-animations-scroll/ */
+
+.reveal.right {
+  position: relative;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.left {
+  position: relative;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.hide.right {
+  position: relative;
+  transform: translateX(-300px);
+  opacity: 0;
+  transition: 5s all ease;
+}
+
+.reveal.bottom {
+  position: relative;
+  transform: translateY(200px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+
+.reveal.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* media query section */
+@media only screen and (max-width: 798px) {
+  .box-title,
+  .box-title-right {
+    font-size: 3rem;
+  }
+
+  .box-title-right {
+    left: -100px;
+  }
+  .box-content {
+    padding-top: 10px;
+  }
+}
+@media only screen and (max-width: 691px) {
+  img.sticky {
+    width: 150px;
+  }
+
+  .talk-box {
+    right: 180px;
+    bottom: 80px;
+  }
+
+  .box-content {
+    padding-top: 2px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .box,
+  .box-right {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    margin-top: 150px;
+  }
+
+  svg {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .box-title,
+  .box-title-right {
+    font-size: 2.5rem;
+    white-space: pre-wrap;
+    line-height: normal;
+    top: 0px;
+  }
+
+  .box {
+    margin-left: 0px;
+  }
+
+  svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .talk-box {
+    z-index: -10;
+  }
+
+  img.sticky {
+    display: none;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
