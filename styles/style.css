@@ -248,6 +248,7 @@ img.sticky {
   justify-content: flex-start;
   align-items: center;
   overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
   padding-bottom: 30px;
 }

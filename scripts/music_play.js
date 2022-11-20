@@ -2,9 +2,8 @@ const el = document.querySelectorAll(".album");
 const dot = document.querySelectorAll(".dot");
 let audio;
 music = ["turf", "pertubator", "byrne", "scattle"];
-let play, click, track;
+let click, track;
 audio = new Audio(`./assets/audio/${"name"}.mp3`);
-console.log(audio.src);
 
 const reset = () => {
   el.forEach((album) => {
@@ -14,9 +13,15 @@ const reset = () => {
 };
 
 function myFunction(element, name) {
+  if (click == 2) {
+    // alert("two clicks");
+    click = 0;
+    track = "";
+  }
   //   reset();
   audio.src = `./assets/audio/${name}.mp3`;
   if (track != name) {
+    click = 1;
     reset();
     track = name;
     audio.play();
@@ -25,6 +30,7 @@ function myFunction(element, name) {
     element.classList.remove("stop");
     dot.style.background = "red";
   } else {
+    click = 2;
     reset();
     audio.pause();
     // play = false;
