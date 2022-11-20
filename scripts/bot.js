@@ -188,9 +188,28 @@ const scrollEvent = () => {
   }
   if (scroller.scrollTop >= usersScreenHeight * 3) {
     setPagePosition("fourth");
+    if (mask.classList.contains("fade-out")) {
+      mask.classList.add("fade-in-2");
+      mask.classList.remove("fade-out");
+      mask.style.right = "10px";
+
+      talkBox.classList.add("fade-in-2");
+      talkBox.classList.remove("fade-out");
+      talkBox.style.right = "230px";
+    }
   }
   if (scroller.scrollTop >= usersScreenHeight * 4) {
-    setPagePosition("fifth");
+    setPagePosition("other");
+    mask.classList.remove("fade-in-2");
+    mask.classList.add("fade-out");
+    mask.style.right = "-300px";
+
+    talkBox.style.right = "-300px";
+    talkBox.classList.remove("fade-in-2");
+    talkBox.classList.add("fade-out");
+  }
+  if (scroller.scrollTop >= usersScreenHeight * 5) {
+    mask.classList.remove("fade-out");
   }
 };
 

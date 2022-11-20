@@ -124,6 +124,17 @@ img.sticky {
   z-index: 0;
   pointer-events: none;
 }
+.fade-out {
+  animation: splash 1s normal forwards ease-in-out;
+  animation-name: fadein;
+  animation-duration: 1000ms;
+}
+
+.fade-in-2 {
+  animation: splash 1s normal forwards ease-in-out;
+  animation-name: fadeout;
+  animation-duration: 1000ms;
+}
 
 .talk-box {
   opacity: 95%;
@@ -145,25 +156,17 @@ img.sticky {
   background-color: black;
   justify-content: center;
   align-items: center;
-  /* flex-wrap: wrap; */
   overflow-x: hidden;
   text-align: center;
   scroll-behavior: smooth;
 }
 
 #hero-music .album {
-  /* background-image: url("https://f4.bcbits.com/img/a2704092723_10.jpg"); */
   border-radius: 50%;
-  /* max-width: 350px; */
   width: 350px;
   height: 350px;
-  /* mix-blend-mode: difference; */
   border: solid 2px white;
-  /* margin-top: 5%; */
-  /* background-position: center;
-    background-repeat: no-repeat; */
   background-size: cover;
-  /* animation-name: spin; */
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -175,7 +178,6 @@ img.sticky {
 }
 
 #hero-music .album:hover .dot {
-  /* animation-name: spin; */
   background-color: red;
 }
 
@@ -202,7 +204,6 @@ img.sticky {
 }
 
 .music-container {
-  /* margin:0 5%; */
   margin: -50px;
   padding: 0;
   gap: 30px;
@@ -211,30 +212,10 @@ img.sticky {
   align-items: center;
   overflow-x: auto;
   width: 100%;
-
-  /* max-height: 4px; */
-  /* width:100%;
-    display:flex;
-    align-items: flex-start;
-    justify-content: start;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: white;
-    flex-direction: row;
-    gap: 30px;
-    background-color: black;
-    justify-content: flex-start;
-    align-items: center;
-    /* flex-wrap: wrap; */
-  /* overflow-x: auto; */
 }
 
 .flex-title {
-  /* display: flex; */
   font-size: 6vw;
-  /* word-spacing: 100vw; */
 }
 
 .dot {
@@ -289,13 +270,6 @@ svg:hover {
   transform: translateX(-300px);
   opacity: 0;
   transition: 5s all ease;
-}
-
-.reveal.top {
-  position: relative;
-  /* transform: translateY(50x); */
-  opacity: 0;
-  transition: 3s all ease;
 }
 
 .reveal.bottom {
@@ -387,5 +361,23 @@ svg:hover {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
