@@ -78,6 +78,9 @@ const messages = {
   ],
 };
 
+// save right position of the talk box because of different sizes it should be dynamic
+let talBoxPos;
+
 const startPageTimer = (page) => {
   // start page timer
   // clean prev interval of the timer to prevent async side effects
@@ -195,11 +198,13 @@ const scrollEvent = () => {
 
       talkBox.classList.add("fade-in-2");
       talkBox.classList.remove("fade-out");
-      talkBox.style.right = "230px";
+
+      talkBox.style.right = talBoxPos;
     }
   }
   if (scroller.scrollTop >= usersScreenHeight * 4) {
     // setPagePosition("other");
+    talBoxPos = window.getComputedStyle(talkBox).right;
     mask.classList.remove("fade-in-2");
     mask.classList.add("fade-out");
     mask.style.right = "-300px";

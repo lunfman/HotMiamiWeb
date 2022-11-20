@@ -128,7 +128,7 @@ img.sticky {
 .fade-out {
   animation: splash 1s normal forwards ease-in-out;
   animation-name: fadein;
-  animation-duration: 2000ms;
+  animation-duration: 1000ms;
 }
 
 .fade-in-2 {
@@ -176,7 +176,7 @@ img.sticky {
 
 #hero-music .album:hover {
   mix-blend-mode: difference;
-  animation-name: spin;
+  /* animation-name: spin; */
 }
 
 #hero-music .album:hover .dot {
