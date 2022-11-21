@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./scripts/validation.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/nav_style.css" />
-    <link rel="stylesheet" href="styles/scroller.css" />
-    <link rel="stylesheet" href="styles/animation.css" />
     <title>Document</title>
   </head>
   <body>
@@ -147,50 +145,98 @@
       </section>
 
       <section id="hero-music">
-        <h1 class="flex-title reveal bottom">ENTHRALLING SOUNDTRACK</h1>
+        <div class="scrollable-content">
+          <h1 class="flex-title reveal bottom">ENTHRALLING SOUNDTRACK</h1>
 
-        <div class="music-container reveal left-2">
-          <div class="outer-background">
-            <div
-              class="album"
-              style="background-image: url(./assets/albums/huero.jpeg)"
-            >
-              <span class="dot"></span>
+          <div class="music-container reveal">
+            <div class="outer-background">
+              <div
+                class="album huero stop"
+                style="background-image: url(./assets/albums/huero.jpeg)"
+              >
+                <img
+                  id="play"
+                  src="./assets/icon/play.svg"
+                  alt="My Happy SVG"
+                />
+                <img
+                  id="pause"
+                  src="./assets/icon/pause.svg"
+                  alt="My Happy SVG"
+                />
+
+                <span class="dot"></span>
+              </div>
+
+              <!-- <h1>El Huervo</h1> -->
             </div>
-            <h1>El Huervo</h1>
-          </div>
 
-          <div class="outer-background">
-            <div
-              class="album"
-              style="background-image: url(./assets/albums/pertubator.jpeg)"
-            >
-              <span class="dot"></span>
+            <div class="outer-background">
+              <div
+                class="album stop"
+                style="background-image: url(./assets/albums/pertubator.jpeg)"
+              >
+                <img
+                  id="play"
+                  src="./assets/icon/play.svg"
+                  alt="My Happy SVG"
+                />
+                <img
+                  id="pause"
+                  src="./assets/icon/pause.svg"
+                  alt="My Happy SVG"
+                />
+                <span class="dot"></span>
+              </div>
             </div>
-          </div>
 
-          <div class="outer-background">
-            <div
-              class="album"
-              style="background-image: url(./assets/albums/byrne.jpeg)"
-            >
-              <span class="dot"></span>
+            <div class="outer-background">
+              <div
+                class="album stop"
+                style="background-image: url(./assets/albums/byrne.jpeg)"
+              >
+                <img
+                  id="play"
+                  src="./assets/icon/play.svg"
+                  alt="My Happy SVG"
+                />
+                <img
+                  id="pause"
+                  src="./assets/icon/pause.svg"
+                  alt="My Happy SVG"
+                />
+                <span class="dot">
+                  <!-- <img id="play" src="./assets/icon/play.svg" alt="My Happy SVG"
+              /> -->
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div class="outer-background">
-            <div
-              class="album"
-              style="background-image: url(./assets/albums/scattle.jpeg)"
-            >
-              <span class="dot"></span>
+            <div class="outer-background">
+              <div
+                class="album stop"
+                style="background-image: url(./assets/albums/scattle.jpeg)"
+              >
+                <img
+                  id="play"
+                  src="./assets/icon/play.svg"
+                  alt="My Happy SVG"
+                />
+                <img
+                  id="pause"
+                  src="./assets/icon/pause.svg"
+                  alt="My Happy SVG"
+                />
+                <span class="dot"></span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section id="hero-footer">
-        <a href="https://github.com/lunfman/HotMiamiWeb">
+        <a class="git-link" href="https://github.com/lunfman/HotMiamiWeb">
+          <img class="git-blood" src="./assets/etc/blood.png" />
           <svg
             width="20px"
             height="20px"
@@ -212,5 +258,6 @@
     <script src="./scripts/bot.js"></script>
     <script src="./scripts/scroll_animation.js"></script>
     <script src="./scripts/nav_script.js"></script>
+    <script src="./scripts/music_play.js"></script>
   </body>
 </html>

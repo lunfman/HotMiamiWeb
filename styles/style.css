@@ -1,191 +1,767 @@
-body, header, nav, main, footer{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    scroll-behavior: smooth;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, "sans-serif";
 }
 
-
-body{
-    position: relative;
+body,
+header,
+nav,
+main,
+footer {
+  /* margin: 0;
+  padding: 0; */
+  border: 0;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
+
+body {
+  background-color: black;
+}
+
+/*navbar */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  box-shadow: 0 1px 8px #ddd;
+  background-color: rgba(0, 0, 0, 0.85);
+  transition-duration: 2000ms;
+}
+
+#nav-title {
+  font-size: 1.5em;
+  margin-right: auto;
+}
+
+nav ul {
+  display: flex;
+  gap: 1px;
+  background-color: white;
+}
+
+nav li {
+  list-style: none;
+  padding: 0 20px;
+  height: 4.5em;
+  background-color: red;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease 0s;
+  font-size: large;
+  transition: transform 0.1s;
+  letter-spacing: 2px;
+}
+
+nav li:hover {
+  background-color: rgb(245, 72, 72);
+}
+
+nav li:hover a {
+  transform: scale(1.1);
+}
+nav li:hover img {
+  transform: scale(1.05);
+}
+
+#icon {
+  width: 40px;
+  height: 40px;
+  color: black;
+  margin-right: 10px;
+  transition: transform 0.1s;
+}
+
+#nav-sub {
+  font-size: 12px;
+}
+
+div.inline {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 10%;
+  margin-left: 4px;
+}
+
+div.inline h1 {
+  color: white;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+div.inline p {
+  color: white;
+  margin-left: 2px;
+  margin-top: 6px;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.single-nav-item {
+  display: none;
+}
+
+/* mobile navbar style */
+.overlay {
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 12%;
+  width: 100%;
+  text-align: left;
+  margin-top: 70px;
+  margin-left: 2%;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  margin-left: 9px;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  font-size: 60px;
+}
+/* main page */
 video#bgvideo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%; 
-    width: auto;
-    height: auto;
-    z-index: -1;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
-    }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+}
+
+#logo {
+  width: 50%;
+}
 
 #hero {
-    height:100vh;
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-#hero-image{
-    height:100vh;
-    width:100%;
-    display:flex;
-    align-items: flex-start;
-    /* justify-content: center; */
-    justify-content: start;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),    url("https://cdn.vox-cdn.com/thumbor/lsvKWScLlH-e2SwsURTrCq77Qvc=/0x0:1440x768/1200x800/filters:focal(605x269:835x499)/cdn.vox-cdn.com/uploads/chorus_image/image/61159511/hlm2_screen_5.0.1488285215.0.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: white;
+#hero-image,
+#hero-image-2,
+#hero-image-3,
+#hero-footer,
+#hero-music {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: white;
 }
 
-#hero-image-2{
-    height:100vh;
-    width:100%;
-    display:flex;
-    align-items: flex-start;
-    /* justify-content: center; */
-    justify-content: start;
-    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),    url("https://preview.redd.it/dlsjtbqhete71.jpg?auto=webp&s=a607a7dd97640de2e0634cc0aa2c63a23d86c233");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: white;
+#hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("https://cdn.vox-cdn.com/thumbor/lsvKWScLlH-e2SwsURTrCq77Qvc=/0x0:1440x768/1200x800/filters:focal(605x269:835x499)/cdn.vox-cdn.com/uploads/chorus_image/image/61159511/hlm2_screen_5.0.1488285215.0.png");
 }
 
-
-.box{
-    margin-top: 200px;
-    margin-left: 30px;
-    color: white;
-    padding: 30px 15px;
-    width: 300px;
-    /* background-color: black; */
-    background-color: rgba(0, 0, 0, 0.55);
-    /* opacity: 70%; */
-    position: relative;
+#hero-image-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("https://media.moddb.com/images/mods/1/38/37508/SUBWAY.jpg");
 }
 
-.box-title-right{
-    position: absolute;
-    top: -20px;
-    left: -120px;
-    font-size: 3.5rem;
-    line-height: 3.5rem;
-    white-space: nowrap;
+#hero-image-3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+    url("https://3dnews.ru/assets/external/illustrations/2019/08/20/992757/HotlineMiamiCollection_1.jpg");
 }
 
-.box-right{
-    margin-left: auto; 
-    margin-right: 30px;    
-    margin-top: 200px;
-    color: white;
-    padding: 30px 15px;
-    width: 300px;
-    /* background-color: black; */
-    background-color: rgba(0, 0, 0, 0.55);
-    /* opacity: 70%; */
-    position: relative;
-    text-align: center;
+/* box styles */
+
+.box,
+.box-right {
+  margin-top: 100px;
+  margin-left: 30px;
+  color: white;
+  padding: 30px 15px;
+  width: 400px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0.55);
+  position: relative;
 }
 
-.box-title{
-    position: absolute;
-    top: -20px;
-    font-size: 3.5rem;
-    line-height: 3.5rem;
-    white-space: nowrap;
+.box-title-right,
+.box-title {
+  font-size: 3.5rem;
+  line-height: 3.5rem;
 }
 
-.box-content{
-    padding-top: 20px;
+.box-title-right {
+  top: -20px;
+  left: -170px;
 }
 
-#left{
-    align-items:left;
-    justify-content: left;
+.box-right {
+  margin-left: auto;
+  margin-right: 30px;
 }
 
-#logo{
-    width: 50%;
+.box-title {
+  top: -20px;
 }
 
+.box-content {
+  padding-top: 20px;
+}
+
+#left {
+  align-items: left;
+  justify-content: left;
+}
+
+/* bot style */
 
 img.sticky {
-    /* position: -webkit-sticky;
-    position: sticky;
-    bottom: 50px;
-    z-index: 1000;
-    padding: 25px;
-    width: 100px;
-    height: 100px;
-    background-color: green;
-    float: right;
-    overflow: hidden; */
-    position: fixed;
-    width: 200px;
-    bottom: 10px;
-    right: 10px;
-    overflow: hidden;
-    z-index: 2;
+  position: fixed;
+  width: 200px;
+  bottom: 10px;
+  right: 10px;
+  overflow: hidden;
+  /* z-index: 0; */
+  pointer-events: none;
+  transition-duration: 2s;
+}
+
+/* bot effects */
+.fade-out {
+  animation: splash 1s normal forwards ease-in-out;
+  animation-name: fadein;
+  animation-duration: 2000ms;
+}
+
+.fade-in-2 {
+  animation: splash 1s normal forwards ease-in-out;
+  animation-name: fadeout;
+  animation-duration: 1000ms;
+}
+
+/* speech box */
+.talk-box {
+  opacity: 95%;
+  background-color: rgb(59, 56, 56);
+  color: white;
+  overflow: hidden;
+  /* z-index: 2; */
+  position: fixed;
+  width: 150px;
+  bottom: 100px;
+  right: 230px;
+  padding: 1%;
+  display: none;
+}
+
+/* music section styles */
+#hero-music {
+  flex-direction: column;
+  gap: 30px;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  text-align: center;
+  /* scroll-behavior: smooth; */
+}
+
+/* content container which allow to scroll inside of snap container */
+.scrollable-content {
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.music-container {
+  /* margin: -50px; */
+  /* padding: 20px; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  padding-bottom: 30px;
+}
+/* title of music section */
+.flex-title {
+  margin-top: 10%;
+  font-size: 6vw;
+}
+
+/* second background of the disk */
+.outer-background,
+#hero-music .album {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: solid 2px white;
+}
+
+.outer-background {
+  background-color: red;
+  /* width: 250px;
+  height: 250px;
+  border-radius: 50%; */
+  margin-top: 4%;
+  margin-bottom: 2%;
+  /* border: solid 2px white; */
+}
+
+/* main background of the disk */
+#hero-music .album {
+  position: relative;
+  /* overflow-y: hidden; */
+  /* border-radius: 50%;
+  width: 250px;
+  height: 250px; */
+  /* border: solid 2px white; */
+  background-size: cover;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition-duration: 3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* playing effect */
+.playing {
+  mix-blend-mode: difference;
+  animation-name: spin;
+}
+
+/* image styles inside of hero-music */
+/* #hero-music img {
+  border-radius: 50%;
+  max-width: 350px;
+  width: 500px;
+  mix-blend-mode: difference;
+  border: solid 2px white;
+} */
+
+/* remove scrollbar fro */
+/* ::-webkit-scrollbar {
+  width: 0; 
+  display: none;
+} */
+
+/* dot - black dot in the center of the disk */
+.dot {
+  height: 60px;
+  width: 60px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* z-index: 2; */
+  border: solid 3px white;
+}
+
+/* music section hover effects */
+
+#hero-music .album:hover {
+  mix-blend-mode: difference;
+}
+
+/* hover effect display pause if playing in class */
+#hero-music .album.playing:hover #pause {
+  display: block;
+}
+
+/* play icon appear on hover and stop in class */
+#hero-music .album.stop:hover #play {
+  mix-blend-mode: difference;
+  display: block;
+}
+
+/* #hero-music .album:hover .playing {
+  mix-blend-mode: normal;
+  display: block;
+} */
+
+#hero-music .album.stop:hover .dot {
+  background-color: red;
+}
+
+/* section different elements  */
+/* play and pause btn styles */
+/* #hero-music .dot #play {
+  border: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 0px;
+} */
+
+#hero-music .album #play {
+  width: 60%;
+  height: 60%;
+  border: 0;
+  border-radius: 0;
+  margin-left: 30px;
+  position: absolute;
+}
+
+#hero-music .album #pause {
+  width: 60%;
+  height: 60%;
+  border: 0;
+  border-radius: 0;
+  margin-left: 0px;
+  position: absolute;
+}
+
+#play,
+#pause {
+  display: none;
+  z-index: -1;
+  border: 0;
+}
+/* footer style */
+#hero-footer {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+  background-color: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+    url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f19dc2f7-eebb-4bb0-9e32-f77d0b9301a1/dbfprzm-93e0b97e-a3db-42f5-8611-929e40092df7.png/v1/fill/w_960,h_720,strp/blood_splatter__transparent__by_pendulumwing_dbfprzm-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZjE5ZGMyZjctZWViYi00YmIwLTllMzItZjc3ZDBiOTMwMWExXC9kYmZwcnptLTkzZTBiOTdlLWEzZGItNDJmNS04NjExLTkyOWU0MDA5MmRmNy5wbmciLCJ3aWR0aCI6Ijw9OTYwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.46ZmWyT7jNi_mDoXZyCP4KfyUClxsoqFFAliHwBubfg");
+  /*  */
+}
+
+.git-link:hover .git-blood {
+  opacity: 1;
+}
+
+.git-blood {
+  width: 200px;
+  top: 230px;
+  position: absolute;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+/* svg styles */
+svg {
+  fill: white;
+  width: 300px;
+  height: 300px;
+  mix-blend-mode: difference;
+}
+
+/* https://alvarotrigo.com/blog/css-animations-scroll/ */
+/* reveal effects */
+.reveal.right {
+  position: relative;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.left {
+  position: relative;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.left-2 {
+  position: relative;
+  transform: translateX(300px);
+  opacity: 0;
+  transition: 6s all ease;
+}
+
+.hide.right {
+  position: relative;
+  transform: translateX(-300px);
+  opacity: 0;
+  transition: 5s all ease;
+}
+
+.reveal.bottom {
+  position: relative;
+  transform: translateY(200px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+
+.reveal.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* media query section */
+
+/* navbar media queries */
+@media only screen and (max-width: 854px) {
+  nav li {
+    padding: 0 50px;
   }
 
-.talk-box{
-    opacity: 95%;
-    background-color: rgb(59, 56, 56);
-    color: white;
-    overflow: hidden;
-    z-index: 2;
-    position: fixed;
-    width: 150px;
-    bottom: 100px;
-    right: 230px;
-    padding: 1%;
+  nav ul {
     display: none;
+  }
+
+  .single-nav-item {
+    display: block;
+  }
 }
 
-.container{
-    height: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #f2f2f2;
-    justify-content: center;
+@media only screen and (min-width: 854px) {
+  #nav-title {
+    width: 30%;
+  }
 }
 
-#hero-footer{
-    height:100vh;
-    width:100%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    justify-content: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: white;
-    background-color: black;
+@media only screen and (max-width: 500px) {
+  div.inline {
+    padding-left: 2%;
+  }
+}
+/* iphone */
+@media only screen and (max-width: 320px) {
+  div.inline {
+    display: none;
+  }
 }
 
-svg{
-    fill:white;
-    width: 300px;
-    height: 300px;
+/* media queries for elements after navbar */
+@media only screen and (max-width: 798px) {
+  .box-title,
+  .box-title-right {
+    font-size: 3rem;
+  }
+
+  .box-title-right {
+    left: -100px;
+  }
+  .box-content {
+    padding-top: 10px;
+  }
+}
+@media only screen and (max-width: 691px) {
+  img.sticky {
+    width: 150px;
+  }
+
+  .talk-box {
+    right: 180px;
+    bottom: 80px;
+  }
+
+  .box-content {
+    padding-top: 2px;
+  }
 }
 
-svg:hover {
-    fill: red;
-  }  
+@media only screen and (max-width: 500px) {
+  .box,
+  .box-right {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    margin-top: 150px;
+  }
+
+  svg {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .box-title,
+  .box-title-right {
+    font-size: 2.5rem;
+    white-space: pre-wrap;
+    line-height: normal;
+    top: 0px;
+  }
+
+  .box {
+    margin-left: 0px;
+  }
+
+  svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .talk-box {
+    z-index: -10;
+  }
+
+  img.sticky {
+    display: none;
+  }
+}
+
+/* albums res */
+/* other wise to high */
+@media only screen and (max-width: 1088px) {
+  .flex-title {
+    margin-top: 20%;
+  }
+}
+
+/* animation section */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* hotline miami title animation */
+.fade-in {
+  animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* scroller container section */
+.scroller {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+  scroll-snap-stop: always;
+}
+
+.scroller section {
+  scroll-snap-align: start;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts */
+/* https://stackoverflow.com/questions/53416348/css-scroll-snapping-vertical-not-working */

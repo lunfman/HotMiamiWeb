@@ -1,83 +1,98 @@
-@font-face{
-    font-family: 'Retro';
-    src: url('../assets/font/retro_computer_personal_use.ttf'); /*URL to font*/
+
+@font-face {
+  font-family: "Retro";
+  src: url("../assets/font/retro_computer_personal_use.ttf"); /*URL to font*/
 }
-body{
-    margin: 0;
-    padding: 0;
-    color: white;
-    font-family: Retro; text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
-    font-size: 20px;
-    letter-spacing: 2px;
-    line-height: 40px;
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-#hero{
-    height:100vh;
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    background:rgba(0, 0, 0, 0.75);
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
-#bgvideo{
-    position: absolute;
-    top: 50%;
-    left: 50%;    
-    width: auto;
-    height: auto;
-    z-index: -1;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-size: contain;
-    min-width: 100%;
-    min-height: 100%;
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: Retro;
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 40px;
 }
-#box{
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+
+#hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.75);
 }
-#submit-button{
-    font-family: Retro;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid white;
-    color: white;
-    padding: 10px 0px;
-    width: 240px;
-    font-size: 14px;
-    margin: 30px auto 30px;
-    cursor: pointer;
+#bgvideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-size: contain;
+  min-width: 100%;
+  min-height: 100%;
 }
-#input{
-    font-family: Retro; color: white;
-    height: 50px;
-    max-width: 100px;
-    margin: 0px 2px;
-    cursor: text;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 0px 10px;
-    border-width: 0px;
-    transition-duration: .3s;
+#box {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
 }
-#goback{
-    font-family: Retro;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid white;
-    color: white;
-    padding: 15px 0px;
-    width: 120px;
-    font-size: 14px;
-    margin: 5px;
-    cursor: pointer;
+#submit-button {
+  font-family: Retro;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  color: white;
+  padding: 10px 0px;
+  width: 240px;
+  font-size: 14px;
+  margin: 30px auto 30px;
+  cursor: pointer;
 }
-#boxfailure{
-    line-height: 35px;
-    text-align: center;
+#input {
+  font-family: Retro;
+  color: white;
+  height: 50px;
+  max-width: 100px;
+  margin: 0px 2px;
+  cursor: text;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0px 10px;
+  border-width: 0px;
+  transition-duration: 0.3s;
+}
+#goback {
+  font-family: Retro;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  color: white;
+  padding: 15px 0px;
+  width: 120px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+}
+#boxfailure {
+  line-height: 35px;
+  text-align: center;
 }
 /* @keyframes move-bg {
     to {
@@ -101,4 +116,4 @@ body{
     -webkit-background-clip: text;
     animation: move-bg 8s infinite linear;
     text-shadow: 2px 2px rgba(255, 255, 255, 0.5) 
-}
+} */
