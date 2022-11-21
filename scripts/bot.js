@@ -217,7 +217,6 @@ const scrollEvent = () => {
 
     // nav.classList.add("fade-out");
     nav.style.opacity = 0;
-
     talkBox.classList.remove("fade-in-2");
     talkBox.classList.add("fade-out");
     talkBox.style.right = "-300px";
