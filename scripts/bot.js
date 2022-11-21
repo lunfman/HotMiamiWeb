@@ -1,6 +1,7 @@
 const scroller = document.querySelector(".scroller");
 const talkBox = document.querySelector(".talk-box");
 const mask = document.querySelector(".mask");
+const nav = document.querySelector("nav");
 // time cutoff of the bot speech -> wait 30 seconds before next talk
 const timeCutOff = 30;
 // get users screen height on browser init
@@ -196,8 +197,13 @@ const scrollEvent = () => {
       mask.classList.remove("fade-out");
       mask.style.right = "10px";
 
+      // nav.classList.remove("fade-out");
+      // nav.classList.add("fade-in-2");
+
       talkBox.classList.add("fade-in-2");
       talkBox.classList.remove("fade-out");
+
+      nav.style.opacity = 1;
 
       talkBox.style.right = talBoxPos;
     }
@@ -208,6 +214,9 @@ const scrollEvent = () => {
     mask.classList.remove("fade-in-2");
     mask.classList.add("fade-out");
     mask.style.right = "-300px";
+
+    // nav.classList.add("fade-out");
+    nav.style.opacity = 0;
 
     talkBox.classList.remove("fade-in-2");
     talkBox.classList.add("fade-out");

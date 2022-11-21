@@ -12,6 +12,7 @@ nav {
   flex-grow: 1;
   box-shadow: 0 1px 8px #ddd;
   background-color: rgba(0, 0, 0, 0.85);
+  transition-duration: 2000ms;
 }
 
 #nav-title {
