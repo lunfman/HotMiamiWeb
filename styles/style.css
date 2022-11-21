@@ -175,11 +175,28 @@ img.sticky {
   scroll-behavior: smooth;
 }
 
-#hero-music .album {
-  overflow-y: hidden;
+.scrollable-content {
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.outer-background {
+  background-color: red;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  width: 350px;
-  height: 350px;
+  margin-top: 4%;
+  margin-bottom: 2%;
+  border: solid 2px white;
+}
+
+#hero-music .album {
+  position: relative;
+  /* overflow-y: hidden; */
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
   border: solid 2px white;
   background-size: cover;
   animation-duration: 5000ms;
@@ -190,6 +207,60 @@ img.sticky {
   align-items: center;
   justify-content: center;
 }
+
+/* playing effect */
+.playing {
+  mix-blend-mode: difference;
+  animation-name: spin;
+}
+
+#hero-music img {
+  border-radius: 50%;
+  max-width: 350px;
+  width: 500px;
+  mix-blend-mode: difference;
+  border: solid 2px white;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  display: none;
+}
+
+.music-container {
+  /* margin: -50px; */
+  /* padding: 20px; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.flex-title {
+  margin-top: 10%;
+  font-size: 6vw;
+}
+
+.dot {
+  height: 60px;
+  width: 60px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  border: solid 3px white;
+}
+
+/* music section hover effects */
 
 #hero-music .album:hover {
   mix-blend-mode: difference;
@@ -211,68 +282,11 @@ img.sticky {
   display: block;
 } */
 
-/* playing effect */
-.playing {
-  mix-blend-mode: difference;
-  animation-name: spin;
-}
-
-.outer-background {
-  background-color: red;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  margin-top: 4%;
-  margin-bottom: 2%;
-  border: solid 2px white;
-}
-
-#hero-music img {
-  border-radius: 50%;
-  max-width: 350px;
-  width: 500px;
-  mix-blend-mode: difference;
-  border: solid 2px white;
-}
-
-::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  display: none;
-}
-
-.music-container {
-  margin: -50px;
-  /* padding: 20px; */
-  gap: 30px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-  width: 100%;
-  padding-bottom: 30px;
-}
-
-.flex-title {
-  font-size: 6vw;
-}
-
-.dot {
-  height: 60px;
-  width: 60px;
-  background-color: rgb(0, 0, 0);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  border: solid 3px white;
-}
-
 #hero-music .album.stop:hover .dot {
   background-color: red;
 }
+
+/* section diffirent elements  */
 /* play and pause btn styles */
 #hero-music .dot #play {
   border: 0;
@@ -312,6 +326,26 @@ img.sticky {
   justify-content: center;
   justify-content: center;
   background-color: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+    url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f19dc2f7-eebb-4bb0-9e32-f77d0b9301a1/dbfprzm-93e0b97e-a3db-42f5-8611-929e40092df7.png/v1/fill/w_960,h_720,strp/blood_splatter__transparent__by_pendulumwing_dbfprzm-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZjE5ZGMyZjctZWViYi00YmIwLTllMzItZjc3ZDBiOTMwMWExXC9kYmZwcnptLTkzZTBiOTdlLWEzZGItNDJmNS04NjExLTkyOWU0MDA5MmRmNy5wbmciLCJ3aWR0aCI6Ijw9OTYwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.46ZmWyT7jNi_mDoXZyCP4KfyUClxsoqFFAliHwBubfg");
+  /*  */
+}
+
+.git-link:hover .git-blood {
+  /* display: block; */
+  opacity: 1;
+}
+
+.git-blood {
+  width: 200px;
+  top: 230px;
+  position: absolute;
+  /* left: 350px; */
+  /* top: 10px; */
+  /* top: 220px; */
+  /* display: none; */
+  opacity: 0;
+  transition-duration: 0.5s;
 }
 
 /* svg styles */
@@ -319,11 +353,12 @@ svg {
   fill: white;
   width: 300px;
   height: 300px;
+  mix-blend-mode: difference;
 }
 
-svg:hover {
+/* svg:hover {
   fill: red;
-}
+} */
 
 /* https://alvarotrigo.com/blog/css-animations-scroll/ */
 /* reveal effects */
@@ -435,6 +470,13 @@ svg:hover {
 
   img.sticky {
     display: none;
+  }
+}
+
+/* albums responsivness */
+@media only screen and (max-width: 1088px) {
+  .flex-title {
+    margin-top: 20%;
   }
 }
 
