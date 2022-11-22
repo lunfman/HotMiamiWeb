@@ -308,6 +308,8 @@ img.sticky {
   right: 230px;
   padding: 1%;
   display: none;
+  pointer-events: none;
+  transition-duration: 2s;
 }
 
 /* music section styles */
