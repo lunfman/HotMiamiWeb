@@ -46,7 +46,7 @@ nav ul {
 nav li {
   list-style: none;
   padding: 0 20px;
-  height: 4.5em;
+  height: 4em;
   background-color: red;
   text-align: center;
   display: inline-flex;
@@ -67,7 +67,7 @@ nav li:hover {
   background-color: rgb(245, 72, 72);
 }
 
-nav li:hover a {
+nav li:hover span {
   transform: scale(1.1);
 }
 nav li:hover img {
