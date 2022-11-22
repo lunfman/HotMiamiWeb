@@ -4,6 +4,11 @@
   font-family: Arial, Helvetica, "sans-serif";
 }
 
+@font-face {
+  font-family: "Retro";
+  src: url("../assets/font/retro_computer_personal_use.ttf"); /*URL to font*/
+}
+
 body,
 header,
 nav,
@@ -34,7 +39,10 @@ nav {
 
 #nav-title {
   font-size: 1.5em;
+  vertical-align: top;
+  /* float: left; */
   margin-right: auto;
+  /* width: 10px; */
 }
 
 nav ul {
@@ -83,18 +91,22 @@ nav li:hover img {
 }
 
 #nav-sub {
+  margin-left: 40px;
   font-size: 12px;
+  font-family: Retro;
 }
 
 div.inline {
   display: inline-flex;
   flex-direction: row;
   justify-content: space-around;
-  padding-left: 10%;
-  margin-left: 4px;
+  padding-left: 1%;
+  white-space: nowrap;
+  /* margin-left: 4px; */
 }
 
 div.inline h1 {
+  font-family: Retro;
   color: white;
   margin-left: 10px;
   font-size: 20px;
@@ -297,6 +309,7 @@ img.sticky {
 
 /* speech box */
 .talk-box {
+  font-family: Retro;
   opacity: 95%;
   background-color: rgb(59, 56, 56);
   color: white;
@@ -559,7 +572,7 @@ svg {
 /* media query section */
 
 /* navbar media queries */
-@media only screen and (max-width: 854px) {
+@media only screen and (max-width: 916px) {
   nav li {
     padding: 0 50px;
   }
@@ -573,11 +586,11 @@ svg {
   }
 }
 
-@media only screen and (min-width: 854px) {
+/* @media only screen and (min-width: 854px) {
   #nav-title {
     width: 30%;
   }
-}
+} */
 
 @media only screen and (max-width: 500px) {
   div.inline {
