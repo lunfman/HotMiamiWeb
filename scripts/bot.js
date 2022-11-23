@@ -1,14 +1,19 @@
+// autor @lunfman
 const scroller = document.querySelector(".scroller");
 const talkBox = document.querySelector(".talk-box");
 const mask = document.querySelector(".mask");
 const nav = document.querySelector("nav");
 // time cutoff of the bot speech -> wait 30 seconds before next talk
+// roboti kõne aja katkestus -> oodake 30 sekundit enne järgmist kõnet
 const timeCutOff = 30;
 // get users screen height on browser init
+// saada kasutajate ekraani kõrgus brauseri alglaadimisel
 let usersScreenHeight = document.documentElement.clientHeight;
 // set current position to home because we start from home page
+// määrake praegune asukoht koduks, sest alustame avalehelt
 let currentPosition = "home";
 // object which is going to store is page already visited by user or note
+// objekt, mis salvestatakse, on leht, mida kasutaja või märkus on juba külastanud
 let pageVisit = {
   home: true,
   second: false,
@@ -24,6 +29,7 @@ Array.prototype.sample = function () {
 };
 
 // object for storing how much time user spent on each page
+// objekt, mis salvestab, kui palju aega kasutaja igal lehel veetis
 const timeOnThePage = {
   home: 0,
   second: 0,
@@ -34,6 +40,8 @@ const timeOnThePage = {
 // https://en.wikiquote.org/wiki/Hotline_Miami
 // messages object which coresponds to the page and time spent on the page 0 means current time cut off is 0 and 1 cutoff is one
 // check get row function to get idea how it is working
+// sõnumite objekt, mis vastab lehele ja lehel veedetud ajale 0 tähendab, et praegune aeg on 0 ja 1
+// piir on üks kontrollimine rea hankimise funktsioon, et saada aimu, kuidas see töötab
 const messages = {
   home: {
     0: [
@@ -80,11 +88,14 @@ const messages = {
 };
 
 // save right position of the talk box because of different sizes it should be dynamic
+// salvestage kõnekasti õige asend erinevate suuruste tõttu peaks see olema dünaamiline
 let talBoxPos;
 
 const startPageTimer = (page) => {
   // start page timer
   // clean prev interval of the timer to prevent async side effects
+  //  avalehe taimer
+  // Asünkroonsete kõrvalmõjude vältimiseks puhastage taimeri eelmine intervall
   clearInterval(pageTimer);
   // set new timer
   pageTimer = setInterval(countVisitTime, 1000, page);
@@ -92,26 +103,31 @@ const startPageTimer = (page) => {
 
 const countVisitTime = (value) => {
   // function for counting time on each page
+  // funktsioon aja lugemiseks igal lehel
   timeOnThePage[value]++;
 };
 
 const boxPopUp = () => {
   // show talking box
+  // näita jutukasti
   talkBox.style.display = "block";
   // change image to action gif because if box pop up than bot should start speaking
+  // muuda pilt tegevus-gif-iks, sest kui kast avaneb, peaks bot rääkima
   mask.src = "./assets/mask/speak.gif";
 };
 
 const boxHide = () => {
   // hide talking box
+  // peida kõnekast
   talkBox.style.display = "none";
   // set image back to default
+  // määrake pilt tagasi
   mask.src = "./assets/mask/mask.png";
 };
 
 const resetTimer = () => {
-  // resettimer function
   // clean all timers which releated to the bot
+  // puhastage kõik robotiga seotud taimerid
   clearInterval(timer);
   clearTimeout(boxTimeOut);
 };

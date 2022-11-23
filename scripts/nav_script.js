@@ -1,3 +1,6 @@
+// https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp
+// modified by @lunfman
+
 const closeButton = document.querySelector(".closebtn");
 const buyButton = document.querySelector(".single-link");
 const menu = document.querySelector(".overlay");

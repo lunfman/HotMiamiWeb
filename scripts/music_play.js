@@ -1,3 +1,4 @@
+// autor @lunfman
 const el = document.querySelectorAll(".album");
 // const dot = document.querySelectorAll(".dot");
 let audio;

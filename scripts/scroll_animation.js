@@ -14,6 +14,7 @@ const isScrolledIntoView = (el) => {
 
 // function which allow toggle reveal effect
 const revealContent = () => {
+  // autor @lunfman
   let reveals = document.querySelectorAll(".reveal");
   for (const reveal of reveals) {
     //  if in element in the view than add to this element class active
