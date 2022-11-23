@@ -590,19 +590,7 @@ svg {
   }
 }
 
-/* @media only screen and (min-width: 854px) {
-  #nav-title {
-    width: 30%;
-  }
-} */
-
 @media only screen and (max-width: 500px) {
-  div.inline {
-    padding-left: 2%;
-  }
-}
-/* iphone */
-@media only screen and (max-width: 320px) {
   div.inline {
     display: none;
   }
