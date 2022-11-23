@@ -208,34 +208,14 @@ const scrollEvent = () => {
   }
   if (scroller.scrollTop >= usersScreenHeight * 3) {
     setPagePosition("fourth");
-    if (mask.classList.contains("fade-out")) {
-      mask.classList.add("fade-in-2");
-      mask.classList.remove("fade-out");
-      mask.style.right = "10px";
-
-      // nav.classList.remove("fade-out");
-      // nav.classList.add("fade-in-2");
-
-      talkBox.classList.add("fade-in-2");
-      talkBox.classList.remove("fade-out");
-
-      nav.style.opacity = 1;
-
-      talkBox.style.right = talBoxPos;
-    }
+    nav.style.opacity = 1;
+    mask.style.opacity = 1;
+    talkBox.style.opacity = 1;
   }
   if (scroller.scrollTop >= usersScreenHeight * 4) {
-    // setPagePosition("other");
-    talBoxPos = window.getComputedStyle(talkBox).right;
-    mask.classList.remove("fade-in-2");
-    mask.classList.add("fade-out");
-    mask.style.right = "-300px";
-
-    // nav.classList.add("fade-out");
     nav.style.opacity = 0;
-    talkBox.classList.remove("fade-in-2");
-    talkBox.classList.add("fade-out");
-    talkBox.style.right = "-300px";
+    mask.style.opacity = 0;
+    talkBox.style.opacity = 0;
   }
   if (scroller.scrollTop >= usersScreenHeight * 5) {
   }
