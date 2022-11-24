@@ -3,9 +3,26 @@ const scroller = document.querySelector(".scroller");
 const talkBox = document.querySelector(".talk-box");
 const mask = document.querySelector(".mask");
 const nav = document.querySelector("nav");
-// time cutoff of the bot speech -> wait 30 seconds before next talk
-// roboti kõne aja katkestus -> oodake 30 sekundit enne järgmist kõnet
+
+// time cutoff of the bot speech ->  related to messages rows
+// example: cutoff is 30s  -> if user spent on the page 15 s the bot will use first row lines for the talk
+// if user spent 31 s on the page than bot is going to use second row lines for this page and so on
+
+// roboti kõne ajaline katkestus -> seotud sõnumiridadega
+// näide: katkestus on 30 s -> kui kasutaja kulutas lehel 15 s, kasutab bot kõne jaoks esimese rea ridu
+// kui kasutaja veetis lehel 31 s, kasutab bot selle lehe jaoks teise rea ridu ja nii edasi
 const timeCutOff = 30;
+
+// start next talk if not other rules applied in .... ms
+// alustage järgmist kõnet, kui mitte muud reeglid, mida rakendatakse .... ms
+const intervalBetweenTalks = 29000;
+// duration of the bot talk also in ms
+// boti kõne kestus ka ms
+const talkDuration = 7000;
+// start first talk when page loaded in ... ms
+// alustab esimest kõnet, kui leht laaditakse ... ms pärast
+const firstTalk = 2000;
+
 // get users screen height on browser init
 // saada kasutajate ekraani kõrgus brauseri alglaadimisel
 let usersScreenHeight = document.documentElement.clientHeight;
@@ -136,7 +153,7 @@ const talk = () => {
   resetTimer();
   // set new timer which is going to call this function again like loop each 29s
   // määrake uus taimer, mis hakkab seda funktsiooni uuesti kutsuma nagu silmus iga 29 sekundi järel
-  timer = setInterval(talk, 29000);
+  timer = setInterval(talk, intervalBetweenTalks);
   // get current position of the page and get related message
   // hankige lehe praegune asukoht ja hankige seotud sõnum
   talkBox.textContent = getComment(currentPosition);
@@ -145,7 +162,7 @@ const talk = () => {
   boxPopUp();
   // set box timeout -> message is going to last exactly 7 seconds
   // set box timeout -> teade kestab täpselt 7 sekundit
-  boxTimeOut = setTimeout(boxHide, 7000);
+  boxTimeOut = setTimeout(boxHide, talkDuration);
 };
 
 const talkStraight = () => {
@@ -202,7 +219,7 @@ const setPagePosition = (page) => {
 
 // init timer and home timer on page init stage
 // init taimer ja kodutaimer lehel init etapis
-let timer = setInterval(talk, 2000);
+let timer = setInterval(talk, firstTalk);
 let pageTimer, boxTimeOut;
 startPageTimer("home");
 
@@ -238,7 +255,6 @@ const scrollEvent = () => {
     nav.style.opacity = 0;
     mask.style.opacity = 0;
     talkBox.style.opacity = 0;
-
   }
   if (scroller.scrollTop >= usersScreenHeight * 5) {
   }
