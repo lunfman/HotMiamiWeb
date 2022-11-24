@@ -1,11 +1,13 @@
+// autor @lunfman
 const el = document.querySelectorAll(".album");
-// const dot = document.querySelectorAll(".dot");
-let audio;
+let palyStatus, track, audio;
 music = ["turf", "pertubator", "byrne", "scattle"];
-let click, track;
+
 audio = new Audio(`./assets/audio/turf.mp3`);
 
 const reset = () => {
+  // set back default styles to all disks
+  // määrake kõikidele ketastele tagasi vaikestiilid
   el.forEach((album) => {
     album.classList.remove("playing");
     album.classList.add("stop");
@@ -13,38 +15,47 @@ const reset = () => {
   });
 };
 
-function myFunction(element, name) {
+const addPlayStyle = (element) => {
+  // set play style to current element
+  // määrake esitusstiil praegusele elemendile
+  element.classList.add("playing");
+  element.classList.remove("stop");
+  dot.style.background = "red";
+};
+
+const playSong = (element, name) => {
+  // function which handles sound play back and which song should play at the moment
+  // funktsioon, mis tegeleb heli taasesitusega ja milline lugu peaks hetkel mängima
+
+  // select dot element of current album
+  // vali praeguse albumi punktielement
   dot = element.querySelector(".dot");
 
-  // this if allow to reset if user clicked on the same track two times
-  if (click == 2) {
-    click = 0;
-    track = "";
-  }
-  // set new source
-  audio.src = `./assets/audio/${name}.mp3`;
-  // check if current track name is the same or not
   if (track != name) {
-    // set click to 1 , track to current track and apply reset function to remove any side effects
-    click = 1;
+    // if track not equal to name -> new track is going to play
+    // init new track playback
+    // kui lugu ei võrdu nimega -> esitatakse uus lugu
+    // uue loo taasesituse alustamine
+    audio.src = `./assets/audio/${name}.mp3`;
+    palyStatus = true;
     track = name;
     reset();
     audio.play();
-    play = true;
-    // apply css classes to current playing item
-    element.classList.add("playing");
-    element.classList.remove("stop");
-    dot.style.background = "red";
-  } else {
-    // if clicked on pause than click is going to be 2 also apply reset ?
-    click = 2;
-    reset();
-    audio.pause();
+    addPlayStyle(element);
+  } else if (track == name) {
+    // if track equal to current track check if track was paused or we should pause it
+    // and toggle the play status to opposite one
+    // kui lugu on võrdne praeguse rajaga, kontrollige, kas lugu on peatatud või peaksime selle peatama
+    // ja lülitage esituse olek vastupidiseks
+    (palyStatus && audio.pause()) || reset();
+    !palyStatus && audio.play() && addPlayStyle(element);
+    palyStatus = !palyStatus;
   }
-}
+};
 
 //  apply click event to every album and use bind function to use arguments inside of addEventListener
+// rakendage klõpsusündmust igale albumile ja kasutage sidumisfunktsiooni, et kasutada argumente addEventListeneri sees
 el.forEach((album, index) => {
   console.log(music[index]);
-  album.addEventListener("click", myFunction.bind(null, album, music[index]));
+  album.addEventListener("click", playSong.bind(null, album, music[index]));
 });

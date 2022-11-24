@@ -39,7 +39,10 @@ nav {
 
 #nav-title {
   font-size: 1.5em;
+  vertical-align: top;
+  /* float: left; */
   margin-right: auto;
+  /* width: 10px; */
 }
 
 nav ul {
@@ -50,8 +53,9 @@ nav ul {
 
 nav li {
   list-style: none;
-  padding: 0 20px;
-  height: 4.5em;
+  padding: 0px;
+  /* padding: 0 20px; */
+  height: 4em;
   background-color: red;
   text-align: center;
   display: inline-flex;
@@ -59,7 +63,14 @@ nav li {
   align-items: center;
 }
 
-nav a {
+nav li a {
+  margin: 0px;
+  padding: 0 20px;
+  text-align: center;
+  align-items: center;
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
   color: white;
   transition: all 0.3s ease 0s;
@@ -72,14 +83,14 @@ nav li:hover {
   background-color: rgb(245, 72, 72);
 }
 
-nav li:hover a {
+nav li:hover span {
   transform: scale(1.1);
 }
 nav li:hover img {
   transform: scale(1.05);
 }
 
-#icon {
+.icon {
   width: 40px;
   height: 40px;
   color: black;
@@ -87,31 +98,35 @@ nav li:hover img {
   transition: transform 0.1s;
 }
 
-#nav-sub {
-  font-family: Retro;
-  text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+.nav-sub {
+  margin-left: 40px;
   font-size: 12px;
+  font-family: Retro;
 }
 
 div.inline {
   display: inline-flex;
   flex-direction: row;
   justify-content: space-around;
-  padding-left: 10%;
-  margin-left: 4px;
+  padding-left: 8%;
+  white-space: nowrap;
+  align-items: center;
+  /* margin-left: 4px; */
 }
 
-div.inline h1 {
+.nav-sub-big {
   font-family: Retro;
-  color: rgba(168,246,248);
+  color: white;
+  padding-left: 5px;
   margin-left: 10px;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 div.inline p {
   color: white;
   margin-left: 2px;
-  margin-top: 4px;
+
+  margin-top: 6px;
 }
 
 nav {
@@ -144,7 +159,7 @@ nav {
   position: relative;
   top: 12%;
   width: 100%;
-  text-align: left;
+  text-align: center;
   margin-top: 70px;
   margin-left: 2%;
 }
@@ -252,6 +267,7 @@ video#bgvideo {
 .box-title {
   font-size: 3.5rem;
   line-height: 3.5rem;
+  transition-duration: 0.5s;
 }
 
 .box-title-right {
@@ -304,6 +320,7 @@ img.sticky {
 
 /* speech box */
 .talk-box {
+  font-family: Retro;
   opacity: 95%;
   background-color: rgb(59, 56, 56);
   color: white;
@@ -315,6 +332,8 @@ img.sticky {
   right: 230px;
   padding: 1%;
   display: none;
+  pointer-events: none;
+  transition-duration: 2s;
 }
 
 /* music section styles */
@@ -435,12 +454,12 @@ img.sticky {
 }
 
 /* hover effect display pause if playing in class */
-#hero-music .album.playing:hover #pause {
+#hero-music .album.playing:hover .pause {
   display: block;
 }
 
 /* play icon appear on hover and stop in class */
-#hero-music .album.stop:hover #play {
+#hero-music .album.stop:hover .play {
   mix-blend-mode: difference;
   display: block;
 }
@@ -463,7 +482,7 @@ img.sticky {
   border-radius: 0px;
 } */
 
-#hero-music .album #play {
+#hero-music .album .play {
   width: 60%;
   height: 60%;
   border: 0;
@@ -472,7 +491,7 @@ img.sticky {
   position: absolute;
 }
 
-#hero-music .album #pause {
+#hero-music .album .pause {
   width: 60%;
   height: 60%;
   border: 0;
@@ -481,8 +500,8 @@ img.sticky {
   position: absolute;
 }
 
-#play,
-#pause {
+.play,
+.pause {
   display: none;
   z-index: -1;
   border: 0;
@@ -499,13 +518,17 @@ img.sticky {
   /*  */
 }
 
+.footer-container {
+  position: relative;
+}
+
 .git-link:hover .git-blood {
   opacity: 1;
 }
 
 .git-blood {
   width: 200px;
-  top: 230px;
+  top: 4%;
   position: absolute;
   opacity: 0;
   transition-duration: 0.5s;
@@ -564,7 +587,7 @@ svg {
 /* media query section */
 
 /* navbar media queries */
-@media only screen and (max-width: 854px) {
+@media only screen and (max-width: 916px) {
   nav li {
     padding: 0 50px;
   }
@@ -578,19 +601,7 @@ svg {
   }
 }
 
-@media only screen and (min-width: 854px) {
-  #nav-title {
-    width: 30%;
-  }
-}
-
 @media only screen and (max-width: 500px) {
-  div.inline {
-    padding-left: 2%;
-  }
-}
-/* iphone */
-@media only screen and (max-width: 320px) {
   div.inline {
     display: none;
   }

@@ -13,16 +13,22 @@ const isScrolledIntoView = (el) => {
 };
 
 // function which allow toggle reveal effect
+// funktsioon, mis lubab kuvamisefekti sisse- ja väljalülitamist
 const revealContent = () => {
+  // autor @lunfman
   let reveals = document.querySelectorAll(".reveal");
   for (const reveal of reveals) {
     //  if in element in the view than add to this element class active
+    // kui elemendis vaates, siis lisada sellele elemendiklassile aktiivne
     isScrolledIntoView(reveal) && reveal.classList.add("active");
     //  if in element not in the view than remove from this element element class active
+    // kui elemendis pole vaates, siis eemalda sellest elemendist elemendiklass aktiivne
     !isScrolledIntoView(reveal) && reveal.classList.remove("active");
   }
 };
 
 //  add scroll eventlistener to detect position of the screen and on change of the scroll position activate
 // revealContent function
+
+// lisage kerimissündmuste kuulaja, et tuvastada ekraani asukoht ja kerimisasendi muutmisel aktiveerida
 scroller.addEventListener("scroll", revealContent);

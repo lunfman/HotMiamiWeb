@@ -1,31 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
     <title>Age res</title>
-    <link rel="stylesheet" href="styles/age.css">
-    <style>
-      /* Chrome, Safari, Edge, Opera */
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-      /* Firefox */
-      input[type="number"] {
-        -moz-appearance: textfield;
-      }
-    </style>
+    <link rel="stylesheet" href="styles/age.css" />
   </head>
   <body>
-    <div id="hero">
-      <video autoplay loop muted id="bgvideo">
-        <source
-          src="./assets/video/loadingscreen.mp4"
-          type="video/mp4"
-        >
+    <section id="hero">
+      <video autoplay loop muted id="bgvideo" playsinline>
+        <source src="./assets/video/loadingscreen.mp4" type="video/mp4" />
       </video>
       <div id="box">
         <p>Enter your date of birth:</p>
@@ -36,26 +24,26 @@
             type="number"
             name="day"
             placeholder="Day"
-          >
+          />
           <input
             class="input"
             required
             type="number"
             name="month"
             placeholder="Month"
-          >
+          />
           <input
             class="input"
             required
             type="number"
             name="year"
             placeholder="Year"
-          >
-          <br>
-          <input type="submit" id="submit-button" value="Submit">
+          />
+          <br />
+          <input type="submit" id="submit-button" value="Submit" />
         </form>
       </div>
-    </div>
-    <script src="./scripts/script.js"></script>
+    </section>
+    <script src="./scripts/age_val.js"></script>
   </body>
 </html>

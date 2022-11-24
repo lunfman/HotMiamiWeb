@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./scripts/validation.js"></script>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Document</title>
   </head>
   <body>
@@ -13,99 +13,124 @@
       <nav>
         <div id="nav-title">
           <div class="inline">
-            <p id="nav-sub">DEVELOPED BY</p>
-            <h1>DENATON</h1>
+            <p class="nav-sub">DEVELOPED BY</p>
+            <p class="nav-sub-big">DENATON</p>
           </div>
           <div class="inline">
-            <p id="nav-sub">PUBLISHED BY</p>
-            <h1>DEVOLVER DIGITAL</h1>
+            <p class="nav-sub">PUBLISHED BY</p>
+            <p class="nav-sub-big">DEVOLVER</p>
           </div>
         </div>
 
         <ul>
           <li>
-            <img id="icon" src="./assets/logo/ps.svg" alt="PS logo"><a
+            <a
               href="https://store.playstation.com/en-us/product/UP3643-CUSA00368_00-HLMBUNDLE0000000"
-              >PS4</a
             >
+              <img class="icon" src="./assets/logo/ps.svg" alt="ps4" />
+              <span>PS4</span>
+            </a>
           </li>
+
           <li>
-            <img id="icon" src="./assets/logo/ns.svg" alt="Switch logo"><a
+            <a
               href="https://www.nintendo.com/store/products/hotline-miami-collection-switch/"
-              >SWITCH</a
             >
+              <img
+                class="icon"
+                src="./assets/logo/ns.svg"
+                alt="nintendo switch"
+              />
+              <span>SWITCH</span>
+            </a>
           </li>
+
           <li>
-            <img id="icon" src="./assets/logo/steam.svg" alt="Steam logo"><a
+            <a
               href="https://store.steampowered.com/bundle/7265/Hotline_Miami_Collection/"
-              >STEAM</a
             >
+              <img class="icon" src="./assets/logo/steam.svg" alt="steam" />
+              <span>STEAM</span>
+            </a>
           </li>
+
           <li>
-            <img id="icon" src="./assets/logo/xbox.svg" alt="XBOX logo"><a
+            <a
               href="https://www.xbox.com/en-US/games/store/hotline-miami-collection/9n69g2l33z7s"
-              >XBOX</a
             >
+              <img class="icon" src="./assets/logo/xbox.svg" alt="xbox" />
+              <span>XBOX</span>
+            </a>
           </li>
         </ul>
         <ul class="single-nav-item">
-          <li class="single-link"><a href="#" style="font-family: Retro; text-shadow: 2px 2px rgba(0, 0, 0)">BUY</a></li>
+          <li class="single-link">
+            <a
+              href="#"
+              style="font-family: Retro; text-shadow: 2px 2px rgba(0, 0, 0)"
+              >BUY</a
+            >
+          </li>
         </ul>
       </nav>
 
-      <div id="myNav" class="overlay">
+      <div class="overlay">
         <a class="closebtn">&times;</a>
-        <div class="overlay-content">
+        <ul class="overlay-content">
           <li>
-            <img id="icon" src="./assets/logo/ps.svg" alt="PS logo"><a
+            <a
               href="https://store.playstation.com/en-us/product/UP3643-CUSA00368_00-HLMBUNDLE0000000"
               >PS4</a
             >
           </li>
           <li>
-            <img id="icon" src="./assets/logo/ns.svg" alt="Switch logo"><a
+            <a
               href="https://www.nintendo.com/store/products/hotline-miami-collection-switch/"
               >SWITCH</a
             >
           </li>
           <li>
-            <img id="icon" src="./assets/logo/steam.svg" alt="Steam logo"><a
+            <a
               href="https://store.steampowered.com/bundle/7265/Hotline_Miami_Collection/"
               >STEAM</a
             >
           </li>
           <li>
-            <img id="icon" src="./assets/logo/xbox.svg" alt="XBOX logo"><a
+            <a
               href="https://www.xbox.com/en-US/games/store/hotline-miami-collection/9n69g2l33z7s"
               >XBOX</a
             >
           </li>
-        </div>
+        </ul>
       </div>
 
       <!-- <div class="container"> -->
       <!-- https://howtogetonline.com/how-to-embed-a-hero-background-video.php -->
       <section id="hero">
-        <video
-          playsinline
-          autoplay
-          muted
-          loop
-          poster="https://cdn.cloudflare.steamstatic.com/steam/apps/219150/capsule_616x353.jpg?t=1654232443"
-          id="bgvideo"
-        >
-          <source src="./assets/video/v1.mp4" type="video/mp4">
+        <video playsinline autoplay muted loop id="bgvideo">
+          <source src="./assets/video/v1.mp4" type="video/mp4" />
         </video>
         <img
           class="fade-in"
           id="logo"
+          alt="logo"
           src="https://cdn2.steamgriddb.com/file/sgdb-cdn/logo/68722b092586cf1d41e07bb366c760c6.png"
-        >
+        />
       </section>
 
       <section id="hero-image">
         <div class="box reveal right">
-          <h1 class="box-title" style="font-family: Retro; font-size: 35px; letter-spacing: 2px; text-shadow: 2px 2px rgba(255, 255, 255, 0.5);">RELENTLESS HOSTILITIES</h1>
+          <h1
+            class="box-title"
+            style="
+              font-family: Retro;
+              font-size: 35px;
+              letter-spacing: 2px;
+              text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
+            "
+          >
+            RELENTLESS HOSTILITIES
+          </h1>
           <div class="box-content">
             <p>
               Adjust combat techniques as the narrative shifts between factions
@@ -118,7 +143,17 @@
 
       <section id="hero-image-2">
         <div class="box-right reveal left">
-          <h1 class="box-title-right" style="font-family: Retro; font-size: 35px; letter-spacing: 2px; text-shadow: 2px 2px rgba(255, 255, 255, 0.5);">REVEL IN VIOLENCE</h1>
+          <h1
+            class="box-title-right"
+            style="
+              font-family: Retro;
+              font-size: 35px;
+              letter-spacing: 2px;
+              text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
+            "
+          >
+            REVEL IN VIOLENCE
+          </h1>
           <div class="box-content">
             <p>
               Breakneck gunplay in bloodstained neon corridors. Wield 35
@@ -131,7 +166,17 @@
 
       <section id="hero-image-3">
         <div class="box reveal right">
-          <h1 class="box-title" style="font-family: Retro; font-size: 35px; letter-spacing: 2px; text-shadow: 2px 2px rgba(255, 255, 255, 0.5);">GRITTY STORYLINE</h1>
+          <h1
+            class="box-title"
+            style="
+              font-family: Retro;
+              font-size: 35px;
+              letter-spacing: 2px;
+              text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
+            "
+          >
+            GRITTY STORYLINE
+          </h1>
           <div class="box-content">
             <p>
               Set in an alternative 1989 Miami, you will assume the role of a
@@ -144,29 +189,18 @@
 
       <section id="hero-music">
         <div class="scrollable-content">
-          <h1 class="flex-title reveal bottom" style="font-family: Retro; letter-spacing: 2px;">ENTHRILLING SOUNDTRACK</h1>
-
+          <h1 class="flex-title reveal bottom">ENTHRILLING SOUNDTRACK</h1>
           <div class="music-container reveal">
             <div class="outer-background">
               <div
                 class="album huero stop"
                 style="background-image: url(./assets/albums/huero.jpeg)"
               >
-                <img
-                  id="play"
-                  src="./assets/icon/play.svg"
-                  alt="My Happy SVG"
-                >
-                <img
-                  id="pause"
-                  src="./assets/icon/pause.svg"
-                  alt="My Happy SVG"
-                >
+                <img class="play" src="./assets/icon/play.svg" alt="play" />
+                <img class="pause" src="./assets/icon/pause.svg" alt="pause" />
 
                 <span class="dot"></span>
               </div>
-
-              <!-- <h1>El Huervo</h1> -->
             </div>
 
             <div class="outer-background">
@@ -174,16 +208,8 @@
                 class="album stop"
                 style="background-image: url(./assets/albums/pertubator.jpeg)"
               >
-                <img
-                  id="play"
-                  src="./assets/icon/play.svg"
-                  alt="My Happy SVG"
-                >
-                <img
-                  id="pause"
-                  src="./assets/icon/pause.svg"
-                  alt="My Happy SVG"
-                >
+                <img class="play" src="./assets/icon/play.svg" alt="play" />
+                <img class="pause" src="./assets/icon/pause.svg" alt="pause" />
                 <span class="dot"></span>
               </div>
             </div>
@@ -193,16 +219,8 @@
                 class="album stop"
                 style="background-image: url(./assets/albums/byrne.jpeg)"
               >
-                <img
-                  id="play"
-                  src="./assets/icon/play.svg"
-                  alt="My Happy SVG"
-                >
-                <img
-                  id="pause"
-                  src="./assets/icon/pause.svg"
-                  alt="My Happy SVG"
-                >
+                <img class="play" src="./assets/icon/play.svg" alt="play" />
+                <img class="pause" src="./assets/icon/pause.svg" alt="pause" />
                 <span class="dot">
                   <!-- <img id="play" src="./assets/icon/play.svg" alt="My Happy SVG"
               /> -->
@@ -215,16 +233,8 @@
                 class="album stop"
                 style="background-image: url(./assets/albums/scattle.jpeg)"
               >
-                <img
-                  id="play"
-                  src="./assets/icon/play.svg"
-                  alt="My Happy SVG"
-                >
-                <img
-                  id="pause"
-                  src="./assets/icon/pause.svg"
-                  alt="My Happy SVG"
-                >
+                <img class="play" src="./assets/icon/play.svg" alt="play" />
+                <img class="pause" src="./assets/icon/pause.svg" alt="play" />
                 <span class="dot"></span>
               </div>
             </div>
@@ -234,23 +244,25 @@
 
       <section id="hero-footer">
         <a class="git-link" href="https://github.com/lunfman/HotMiamiWeb">
-          <img class="git-blood" src="./assets/etc/blood.png" alt="blood">
-          <svg
-            width="20px"
-            height="20px"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.18 11.309c-.718 0-1.3.807-1.3 1.799 0 .994.582 1.801 1.3 1.801s1.3-.807 1.3-1.801c-.001-.992-.582-1.799-1.3-1.799zm4.526-4.683c.149-.365.155-2.439-.635-4.426 0 0-1.811.199-4.551 2.08-.575-.16-1.548-.238-2.519-.238-.973 0-1.945.078-2.52.238C4.74 2.399 2.929 2.2 2.929 2.2c-.789 1.987-.781 4.061-.634 4.426C1.367 7.634.8 8.845.8 10.497c0 7.186 5.963 7.301 7.467 7.301l1.734.002 1.732-.002c1.506 0 7.467-.115 7.467-7.301 0-1.652-.566-2.863-1.494-3.871zm-7.678 10.289h-.056c-3.771 0-6.709-.449-6.709-4.115 0-.879.31-1.693 1.047-2.369C5.537 9.304 7.615 9.9 9.972 9.9h.056c2.357 0 4.436-.596 5.664.531.735.676 1.045 1.49 1.045 2.369 0 3.666-2.937 4.115-6.709 4.115zm-3.207-5.606c-.718 0-1.3.807-1.3 1.799 0 .994.582 1.801 1.3 1.801.719 0 1.301-.807 1.301-1.801 0-.992-.582-1.799-1.301-1.799z"
-            ></path>
-          </svg>
+          <div class="footer-container">
+            <img class="git-blood" src="./assets/etc/blood.png" alt="blood" />
+            <svg
+              width="20px"
+              height="20px"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.18 11.309c-.718 0-1.3.807-1.3 1.799 0 .994.582 1.801 1.3 1.801s1.3-.807 1.3-1.801c-.001-.992-.582-1.799-1.3-1.799zm4.526-4.683c.149-.365.155-2.439-.635-4.426 0 0-1.811.199-4.551 2.08-.575-.16-1.548-.238-2.519-.238-.973 0-1.945.078-2.52.238C4.74 2.399 2.929 2.2 2.929 2.2c-.789 1.987-.781 4.061-.634 4.426C1.367 7.634.8 8.845.8 10.497c0 7.186 5.963 7.301 7.467 7.301l1.734.002 1.732-.002c1.506 0 7.467-.115 7.467-7.301 0-1.652-.566-2.863-1.494-3.871zm-7.678 10.289h-.056c-3.771 0-6.709-.449-6.709-4.115 0-.879.31-1.693 1.047-2.369C5.537 9.304 7.615 9.9 9.972 9.9h.056c2.357 0 4.436-.596 5.664.531.735.676 1.045 1.49 1.045 2.369 0 3.666-2.937 4.115-6.709 4.115zm-3.207-5.606c-.718 0-1.3.807-1.3 1.799 0 .994.582 1.801 1.3 1.801.719 0 1.301-.807 1.301-1.801 0-.992-.582-1.799-1.301-1.799z"
+              />
+            </svg>
+          </div>
         </a>
-        <h2 style="font-family: Retro; letter-spacing: 2px;">Developed by 2 guys</h2>
-        <h3 style="font-family: Retro">2022</h3>
+        <h2>Developed by 2 idiots</h2>
+        <h3>2022</h3>
       </section>
-      <img class="sticky mask" src="./assets/mask/mask.png">
+      <img class="sticky mask" src="./assets/mask/mask.png" alt="cock" />
       <div class="talk-box">Amazing trailer!</div>
     </section>
     <script src="./scripts/bot.js"></script>
