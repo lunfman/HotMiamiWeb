@@ -353,7 +353,6 @@ img.sticky {
   padding: 0;
   margin: 0;
   overflow: auto;
-
 }
 
 .music-container {
@@ -493,7 +492,6 @@ img.sticky {
 }
 
 #hero-music .album .pause {
-
   width: 60%;
   height: 60%;
   border: 0;
@@ -605,7 +603,6 @@ svg {
 
 @media only screen and (max-width: 500px) {
   div.inline {
-
     display: none;
   }
 }
