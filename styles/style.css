@@ -110,14 +110,16 @@ div.inline {
   justify-content: space-around;
   padding-left: 8%;
   white-space: nowrap;
+  align-items: center;
   /* margin-left: 4px; */
 }
 
-div.inline h1 {
+.nav-sub-big {
   font-family: Retro;
   color: white;
+  padding-left: 5px;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 div.inline p {
