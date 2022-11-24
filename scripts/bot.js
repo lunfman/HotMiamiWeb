@@ -238,6 +238,7 @@ const scrollEvent = () => {
     nav.style.opacity = 0;
     mask.style.opacity = 0;
     talkBox.style.opacity = 0;
+
   }
   if (scroller.scrollTop >= usersScreenHeight * 5) {
   }

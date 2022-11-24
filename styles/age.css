@@ -23,6 +23,7 @@ body {
   letter-spacing: 2px;
   line-height: 40px;
 }
+
 #hero {
   height: 100vh;
   width: 100%;
@@ -64,7 +65,7 @@ body {
   margin: 30px auto 30px;
   cursor: pointer;
 }
-#input {
+.input {
   font-family: Retro;
   color: white;
   height: 50px;
