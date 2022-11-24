@@ -82,7 +82,7 @@ nav li:hover img {
   transform: scale(1.05);
 }
 
-#icon {
+.icon {
   width: 40px;
   height: 40px;
   color: black;
@@ -90,7 +90,7 @@ nav li:hover img {
   transition: transform 0.1s;
 }
 
-#nav-sub {
+.nav-sub {
   margin-left: 40px;
   font-size: 12px;
   font-family: Retro;
@@ -100,7 +100,7 @@ div.inline {
   display: inline-flex;
   flex-direction: row;
   justify-content: space-around;
-  padding-left: 1%;
+  padding-left: 8%;
   white-space: nowrap;
   /* margin-left: 4px; */
 }
@@ -256,6 +256,7 @@ video#bgvideo {
 .box-title {
   font-size: 3.5rem;
   line-height: 3.5rem;
+  transition-duration: 0.5s;
 }
 
 .box-title-right {
