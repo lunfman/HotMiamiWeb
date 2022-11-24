@@ -12,14 +12,7 @@
   </head>
   <body>
     <section id="hero">
-      <video
-        autoplay
-        loop
-        muted
-        width="100%"
-        id="bgvideo"
-        playsinline
-      >
+      <video autoplay loop muted id="bgvideo" playsinline>
         <source src="./assets/video/loadingscreen.mp4" type="video/mp4" />
       </video>
       <div id="box">
@@ -31,26 +24,26 @@
             type="number"
             name="day"
             placeholder="Day"
-          >
+          />
           <input
             class="input"
             required
             type="number"
             name="month"
             placeholder="Month"
-          >
+          />
           <input
             class="input"
             required
             type="number"
             name="year"
             placeholder="Year"
-          >
-          <br>
-          <input type="submit" id="submit-button" value="Submit">
+          />
+          <br />
+          <input type="submit" id="submit-button" value="Submit" />
         </form>
       </div>
-    </div>
+    </section>
+    <script src="./scripts/age_val.js"></script>
   </body>
-  <script src="./scripts/age_val.js"></script>
 </html>
