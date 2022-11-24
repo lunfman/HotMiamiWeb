@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Retro";
+  src: url("../assets/font/retro_computer_personal_use.ttf"); /*URL to font*/
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -83,6 +88,8 @@ nav li:hover img {
 }
 
 #nav-sub {
+  font-family: Retro;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
   font-size: 12px;
 }
 
@@ -95,15 +102,16 @@ div.inline {
 }
 
 div.inline h1 {
-  color: white;
+  font-family: Retro;
+  color: rgba(168,246,248);
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 div.inline p {
   color: white;
   margin-left: 2px;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 nav {
@@ -265,7 +273,6 @@ video#bgvideo {
 }
 
 #left {
-  align-items: left;
   justify-content: left;
 }
 
