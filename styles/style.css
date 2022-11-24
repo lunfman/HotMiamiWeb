@@ -444,12 +444,12 @@ img.sticky {
 }
 
 /* hover effect display pause if playing in class */
-#hero-music .album.playing:hover #pause {
+#hero-music .album.playing:hover .pause {
   display: block;
 }
 
 /* play icon appear on hover and stop in class */
-#hero-music .album.stop:hover #play {
+#hero-music .album.stop:hover .play {
   mix-blend-mode: difference;
   display: block;
 }
@@ -472,7 +472,7 @@ img.sticky {
   border-radius: 0px;
 } */
 
-#hero-music .album #play {
+#hero-music .album .play {
   width: 60%;
   height: 60%;
   border: 0;
@@ -481,7 +481,7 @@ img.sticky {
   position: absolute;
 }
 
-#hero-music .album #pause {
+#hero-music .album .pause {
   width: 60%;
   height: 60%;
   border: 0;
@@ -490,8 +490,8 @@ img.sticky {
   position: absolute;
 }
 
-#play,
-#pause {
+.play,
+.pause {
   display: none;
   z-index: -1;
   border: 0;
