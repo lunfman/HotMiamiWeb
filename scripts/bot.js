@@ -89,7 +89,7 @@ const messages = {
     0: ["Nice brain soup, dude!"],
   },
   fourth: {
-    0: ["One more pizza. please!"],
+    0: ["One more brain shot. please!"],
   },
   fifth: {
     0: [
