@@ -5,12 +5,12 @@ const mask = document.querySelector(".mask");
 const nav = document.querySelector("nav");
 
 // time cutoff of the bot speech ->  related to messages rows
-// example: cutoff is 30s  -> if user spent on the page 15 s the bot will use first row lines for the talk
-// if user spent 31 s on the page than bot is going to use second row lines for this page and so on
+// example: cutoff is 30s  -> if user spent on the page 15 s the bot will use row 0 lines for the talk
+// if user spent 31 s on the page than bot is going to use row 1 lines for this page and so on
 
 // roboti kõne ajaline katkestus -> seotud sõnumiridadega
-// näide: katkestus on 30 s -> kui kasutaja kulutas lehel 15 s, kasutab bot kõne jaoks esimese rea ridu
-// kui kasutaja veetis lehel 31 s, kasutab bot selle lehe jaoks teise rea ridu ja nii edasi
+// näide: katkestus on 30 s -> kui kasutaja kulutas lehel 15 s, kasutab bot kõne jaoks rea (0) ridu
+// kui kasutaja veetis lehel 31 s, kasutab bot selle lehe jaoks rea(1) ridu ja nii edasi
 const timeCutOff = 30;
 
 // start next talk if not other rules applied in .... ms
