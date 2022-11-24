@@ -135,18 +135,23 @@ const resetTimer = () => {
 const talk = () => {
   resetTimer();
   // set new timer which is going to call this function again like loop each 29s
+  // määrake uus taimer, mis hakkab seda funktsiooni uuesti kutsuma nagu silmus iga 29 sekundi järel
   timer = setInterval(talk, 29000);
   // get current position of the page and get related message
+  // hankige lehe praegune asukoht ja hankige seotud sõnum
   talkBox.textContent = getComment(currentPosition);
   // call pop up box
+  // kutse hüpikaken
   boxPopUp();
   // set box timeout -> message is going to last exactly 7 seconds
+  // set box timeout -> teade kestab täpselt 7 sekundit
   boxTimeOut = setTimeout(boxHide, 7000);
 };
 
 const talkStraight = () => {
   // talkstraight fucntion allow to by pass all prev rules and clear all timers so the bot start to
   // speak straight away after it was called
+  // funktsioon talkstraight võimaldab mööda minna kõigist eelmistest reeglitest ja tühjendada kõik taimerid, nii et bot hakkab // rääkima kohe pärast selle väljakutsumist
   resetTimer();
   timer = setInterval(talk, 1000);
 };
@@ -154,15 +159,21 @@ const talkStraight = () => {
 const getMessagesRow = (page) => {
   // function which calculates message position base on timecutoff
   // > 30 s -> row 1 and so on
+  // funktsioon, mis arvutab ajalõigu alusel sõnumi asukoha baasi
+  // > 30 s -> rida 1 ja nii edasi
   return Math.floor(timeOnThePage[page] / timeCutOff);
 };
 
 const getComment = (page) => {
   // get row of the message
+  // hankige sõnumi rida
   let row = getMessagesRow(page);
   // use this row to retrive message from message object related to current page and time on the page
   // if messages do not have message for this params than return random message from other category
   // if row do not exists will run other sample
+  // kasutage seda rida praeguse lehe ja lehe ajaga seotud sõnumi objektilt sõnumi toomiseks
+  // kui sõnumitel pole selle parameetri jaoks teadet, tagastatakse juhuslik sõnum teisest kategooriast
+  // kui rida pole olemas, käivitatakse muu näidis
   return messages[page][row]
     ? messages[page][row].sample()
     : messages["other"].sample();
@@ -170,22 +181,27 @@ const getComment = (page) => {
 
 const setPageVisit = (page) => {
   // set that user visited the page for the first time -> start straight talk
+  // määrake, et kasutaja külastas lehte esimest korda -> alusta otsest kõnet
   if (!pageVisit[page]) {
     talkStraight();
     pageVisit[page] = true;
   }
   // if page was visited this function will not apply this effect again
+  // kui lehte külastati, see funktsioon seda efekti enam ei rakenda
 };
 
 const setPagePosition = (page) => {
   // function which sets page position and starts all req functions like
   // startPageTimer to calculate time on the current page and setPageVisited
+  // funktsioon, mis määrab lehe asukoha ja käivitab kõik req funktsioonid nagu
+  // startPageTimer, et arvutada praegusel lehel aega ja määrataPageVisited
   currentPosition = page;
   startPageTimer(page);
   setPageVisit(page);
 };
 
 // init timer and home timer on page init stage
+// init taimer ja kodutaimer lehel init etapis
 let timer = setInterval(talk, 2000);
 let pageTimer, boxTimeOut;
 startPageTimer("home");
@@ -197,6 +213,12 @@ const scrollEvent = () => {
 
   // to get page diff we use simple math if we know users screen height than second page this value by 2
   // ofcourse there is a lot of diffirent oportunietises to create this functionality
+  // sündmuse kerimisfunktsioon, mis käivitub kerimisel
+  // see funktsioon kontrollib ka, millisel lehel kasutaja hetkel asub ja lubab seda teha
+  // käivitavad erinevad sündmused, mis põhinevad positsioonil lehel
+
+  // lehe erinevuse saamiseks kasutame lihtsat matemaatikat, kui teame kasutaja ekraani kõrgust kui teise lehe kõrgust 2 võrra
+  // loomulikult on selle funktsiooni loomiseks palju erinevaid võimalusi
   if (scroller.scrollTop == 1) {
     setPagePosition("home");
   }
