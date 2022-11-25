@@ -1,36 +1,183 @@
-// autor @lunfman
+/* 
+@lunfman autor
+
+description: script which run bot logic based on parameters
+
+customizable variables:
+
+timeCutOff - time cutoff of the bot speech ->  related to messages rows 
+      example: cutoff is 30s  -> if user spent on the page 15 s the bot will use row 0 lines for the talk if user spent 31 s
+      on the page than bot is going to use row 1 lines for this page and so on
+
+intervalBetweenTalks -  start next talk in .... ms
+
+talkDuration -  duration of the bot talk also in ms (when talk box appears it is going to be visible for n s)
+
+firstTalk - start first talk in n ms after page load
+
+variables:
+
+usersScreenHeight - heigh of the users screen
+currentPosition - first value is home because we start from home section ... logical
+
+pageVisit - object which stores information which page was already visited
+
+timeOnThePage - object which stores how many second user spent on the page
+
+messages - complex object which has key as name of the section and object inside of the key which should have keys from 0 - n. 0 is the row.
+          we use this row to show messages based on how many second user spend on the page. Check timeCutOff.
+
+          others - is the key which will be used if there is no more available messages for current section. (keyError)
+
+timer - timer which waits n ms before next talk.
+boxTimeOut - timer in how many second box should be closed.
+
+functions:
+
+startPageTimer - take one argument page(key for pageVisit). This function clear previous pageTimer and sets new timer based on current section.
+
+countVisitTime - take one argument value(the same as page in startPageTimer) we use this function inside of startPageTimer.
+                 It simply add seconds to timeOnThePage object to the current active key.
+
+boxPopUp - simple function which on call change style of the box to visible and change bot image src to gif.
+
+boxHide - opposite to boxPopUp
+
+resetTimer - function which reset timer and boxTimer. This allow to prevent async side effects.
+
+talk - is the most important function in this script. It allow our bot to talk.
+        1. resetTimer to prevent async side effects
+        2. set new timers and pass itself to interval. This is like a loop. This function will be called again in n seconds.
+        3. call getComment to get bot speech for the current page
+        4. boxPopUp - make talking box visible
+        5. setTimer to the box so it will disappear in talkDuration ms.
+
+talkStraight - the function which break all the rules of the timers. We need it to activate no mater how long bot talked on prev page. If user scrolled down
+                it should speech for this page. We use it only when user visits section for the first time. Your can see this effect if your start scroll
+                the section in a row without waiting for the bot speech end. 
+                "speak straight away after it was called"
+
+getMessagesRow - take one argument page(key for messages). This function return the row number based on timeCutoff.
+
+getComment - take one argument page(key for messages).
+              1. first of all get row for the current page messages.
+              2. and return message based on row. If row not found(keyError) than use messages from key other.
+
+setPageVisit - take one argument page(key for pageVisit)
+              1. Check if the page was visited.
+              2. If page not visited activate straight talk for this page and set that his page is visited.
+
+setPagePosition - function take one argument page(key for setPageVisit and countVisitTime)
+              1. set that currentPosition to page argument
+              2. call startPageTimer and setPageVisit
+
+scrollEvent - function which is used in scroll event listener. And perform different logical operations based on the section.
+              (where user is currently located on the web page).
+
+
+also we have event listener for resize action. If user try to resize the screen and the height of the browser screen will b changed.
+We are going to get new value for usersScreenHeight
+
+#######################################################################################################################################
+
+EE:
+kirjeldus: skript, mis käivitab parameetrite alusel robotloogika
+
+kohandatavad muutujad:
+
+timeCutOff – roboti kõne ajaline katkestus –> seotud sõnumiridadega
+      näide: katkestus on 30 s -> kui kasutaja kulutas lehel 15 s, kasutab robot kõne jaoks rida 0, kui kasutaja kulutas 31 s
+      lehel hakkab bot kasutama selle lehe jaoks rida 1 ja nii edasi
+
+intervalBetweenTalks – alustage järgmist kõnet .... ms pärast
+
+talkDuration – roboti kõne kestus ka ms-des (kui ilmub kõnekast, on see nähtav n s)
+
+firstTalk – alustage esimest kõnet n ms pärast lehe laadimist
+
+muutujad:
+
+usersScreenHeight – kasutajate ekraani kõrgus
+currentPosition – esimene väärtus on kodu, sest alustame kodujaotisest ... loogiline
+
+pageVisit - objekt, mis salvestab teabe, millist lehte on juba külastatud
+
+timeOnThePage – objekt, mis salvestab, mitu sekundit kasutaja lehel veetis
+
+sõnumid - kompleksobjekt, mille jaotise nimeks on võti ja võtme sees olev objekt, millel peaksid olema võtmed vahemikus 0–n. 0 on rida.
+          kasutame seda rida sõnumite kuvamiseks selle põhjal, mitu sekundit kasutaja lehel kulutab. Kontrollige TimeCutOff.
+
+          teised – on võti, mida kasutatakse juhul, kui praeguses jaotises pole enam sõnumeid. (keyError)
+
+taimer – taimer, mis ootab n ms enne järgmist kõnet.
+boxTimeOut – taimer, mitu sekundit tuleb kasti sulgeda.
+
+funktsioonid:
+
+startPageTimer – võtke üks argumendileht (pageVisit võti). See funktsioon tühjendab eelmise leheTaimeri ja seab uue taimeri praeguse jaotise alusel.
+
+countVisitTime – võtke üks argumendi väärtus (sama, mis lehel startPageTimeris), me kasutame seda funktsiooni startPageTimeris.
+                 See lihtsalt lisab praegusele aktiivsele võtmele timeOnThePage objektile sekundeid.
+
+boxPopUp – lihtne funktsioon, mis muudab kõne korral kasti stiili nähtavaks ja muudab roboti pildi src gif-vorminguks.
+
+boxHide – boxPopUpi vastas
+
+resetTimer – funktsioon, mis lähtestab taimeri ja boxTimer. See võimaldab vältida asünkroonseid kõrvalmõjusid.
+
+talk – on selle skripti kõige olulisem funktsioon. See võimaldab meie robotil rääkida.
+        1. resetTimer asünkroonimise kõrvalmõjude vältimiseks
+        2. seadke uued taimerid ja suunake end intervallile. See on nagu silmus. Seda funktsiooni kutsutakse uuesti n sekundi pärast.
+        3. Praeguse lehe robotkõne saamiseks helistage getCommentile
+        4. boxPopUp – tee jutukast nähtavaks
+        5. Seadke Taimer kasti, et see kaoks kõne kestuse ms jooksul.
+
+talkStraight – funktsioon, mis rikub kõiki taimerite reegleid. Vajame seda aktiveerimiseks olenemata sellest, kui kaua bot eelmisel lehel rääkis. Kui kasutaja keris alla
+                see peaks selle lehe jaoks kõne olema. Kasutame seda ainult siis, kui kasutaja külastab jaotist esimest korda. Seda efekti näete, kui alustate kerimist
+                osa järjest, ootamata robotkõne lõppu.
+                "Rääkige kohe pärast helistamist"
+
+getMessagesRow – võtke üks argumendileht (sõnumite võti). See funktsioon tagastab rea numbri, mis põhineb timeCutoffil.
+
+getComment – ​​võtke üks argumentide leht (sõnumite võti).
+              1. kõigepealt hankige aktiivse lehe sõnumite rida.
+              2. ja tagastab rea alusel sõnumi. Kui rida ei leitud (keyError), kasutage teise võtme sõnumeid.
+
+setPageVisit – võtke üks argument leht (pageVisit võti)
+              1. Kontrollige, kas lehte külastati.
+              2. Kui lehte pole külastatud, aktiveerige selle lehe jaoks otsekõne ja määrake, et tema lehte külastatakse.
+
+setPagePosition – funktsioon võtab ühe argumendi leht (võti setPageVisit ja countVisitTime jaoks)
+              1. määrake praeguse positsiooni argumendiks leht
+              2. helistage startPageTimerile ja määrakePageVisit
+
+scrollEvent – ​​funktsioon, mida kasutatakse kerimissündmuste kuulajas. Ja sooritage lõigu alusel erinevaid loogilisi toiminguid.
+              (kus kasutaja hetkel veebilehel asub).
+
+
+Meil on ka sündmuste kuulaja suuruse muutmiseks. Kui kasutaja proovib ekraani suurust muuta, muutub brauseri ekraani kõrgus b.
+Saame kasutajatele ekraanikõrguse jaoks uue väärtuse
+*/
+
+// https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array Ben Aubin
+// lisame pythoni sarnast funktisooni .choice()
+Array.prototype.sample = function () {
+  return this[Math.floor(Math.random() * this.length)];
+};
+
 const scroller = document.querySelector(".scroller");
 const talkBox = document.querySelector(".talk-box");
 const mask = document.querySelector(".mask");
 const nav = document.querySelector("nav");
 
-// time cutoff of the bot speech ->  related to messages rows
-// example: cutoff is 30s  -> if user spent on the page 15 s the bot will use row 0 lines for the talk
-// if user spent 31 s on the page than bot is going to use row 1 lines for this page and so on
-
-// roboti kõne ajaline katkestus -> seotud sõnumiridadega
-// näide: katkestus on 30 s -> kui kasutaja kulutas lehel 15 s, kasutab bot kõne jaoks rea (0) ridu
-// kui kasutaja veetis lehel 31 s, kasutab bot selle lehe jaoks rea(1) ridu ja nii edasi
 const timeCutOff = 30;
-
-// start next talk if not other rules applied in .... ms
-// alustage järgmist kõnet, kui mitte muud reeglid, mida rakendatakse .... ms
 const intervalBetweenTalks = 29000;
-// duration of the bot talk also in ms
-// boti kõne kestus ka ms
 const talkDuration = 7000;
-// start first talk when page loaded in ... ms
-// alustab esimest kõnet, kui leht laaditakse ... ms pärast
 const firstTalk = 2000;
 
-// get users screen height on browser init
-// saada kasutajate ekraani kõrgus brauseri alglaadimisel
+let pageTimer, boxTimeOut;
 let usersScreenHeight = document.documentElement.clientHeight;
-// set current position to home because we start from home page
-// määrake praegune asukoht koduks, sest alustame avalehelt
 let currentPosition = "home";
-// object which is going to store is page already visited by user or note
-// objekt, mis salvestatakse, on leht, mida kasutaja või märkus on juba külastanud
 let pageVisit = {
   home: true,
   second: false,
@@ -39,14 +186,6 @@ let pageVisit = {
   fifth: false,
 };
 
-// https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array Ben Aubin
-// lisame pythoni sarnast funktisooni .choice()
-Array.prototype.sample = function () {
-  return this[Math.floor(Math.random() * this.length)];
-};
-
-// object for storing how much time user spent on each page
-// objekt, mis salvestab, kui palju aega kasutaja igal lehel veetis
 const timeOnThePage = {
   home: 0,
   second: 0,
@@ -54,11 +193,8 @@ const timeOnThePage = {
   fourth: 0,
   fifth: 0,
 };
+
 // https://en.wikiquote.org/wiki/Hotline_Miami
-// messages object which coresponds to the page and time spent on the page 0 means current time cut off is 0 and 1 cutoff is one
-// check get row function to get idea how it is working
-// sõnumite objekt, mis vastab lehele ja lehel veedetud ajale 0 tähendab, et praegune aeg on 0 ja 1
-// piir on üks kontrollimine rea hankimise funktsioon, et saada aimu, kuidas see töötab
 const messages = {
   home: {
     0: [
@@ -104,138 +240,74 @@ const messages = {
   ],
 };
 
-// save right position of the talk box because of different sizes it should be dynamic
-// salvestage kõnekasti õige asend erinevate suuruste tõttu peaks see olema dünaamiline
-let talBoxPos;
-
 const startPageTimer = (page) => {
-  // start page timer
-  // clean prev interval of the timer to prevent async side effects
-  //  avalehe taimer
-  // Asünkroonsete kõrvalmõjude vältimiseks puhastage taimeri eelmine intervall
   clearInterval(pageTimer);
-  // set new timer
   pageTimer = setInterval(countVisitTime, 1000, page);
 };
 
 const countVisitTime = (value) => {
-  // function for counting time on each page
-  // funktsioon aja lugemiseks igal lehel
   timeOnThePage[value]++;
 };
 
 const boxPopUp = () => {
-  // show talking box
-  // näita jutukasti
   talkBox.style.display = "block";
-  // change image to action gif because if box pop up than bot should start speaking
-  // muuda pilt tegevus-gif-iks, sest kui kast avaneb, peaks bot rääkima
   mask.src = "./assets/mask/speak.gif";
 };
 
 const boxHide = () => {
-  // hide talking box
-  // peida kõnekast
   talkBox.style.display = "none";
-  // set image back to default
-  // määrake pilt tagasi
   mask.src = "./assets/mask/mask.png";
 };
 
 const resetTimer = () => {
-  // clean all timers which releated to the bot
-  // puhastage kõik robotiga seotud taimerid
   clearInterval(timer);
   clearTimeout(boxTimeOut);
 };
 
 const talk = () => {
   resetTimer();
-  // set new timer which is going to call this function again like loop each 29s
-  // määrake uus taimer, mis hakkab seda funktsiooni uuesti kutsuma nagu silmus iga 29 sekundi järel
   timer = setInterval(talk, intervalBetweenTalks);
-  // get current position of the page and get related message
-  // hankige lehe praegune asukoht ja hankige seotud sõnum
   talkBox.textContent = getComment(currentPosition);
-  // call pop up box
-  // kutse hüpikaken
+
   boxPopUp();
-  // set box timeout -> message is going to last exactly 7 seconds
-  // set box timeout -> teade kestab täpselt 7 sekundit
   boxTimeOut = setTimeout(boxHide, talkDuration);
 };
 
 const talkStraight = () => {
-  // talkstraight fucntion allow to by pass all prev rules and clear all timers so the bot start to
-  // speak straight away after it was called
-  // funktsioon talkstraight võimaldab mööda minna kõigist eelmistest reeglitest ja tühjendada kõik taimerid, nii et bot hakkab // rääkima kohe pärast selle väljakutsumist
+  t;
   resetTimer();
   timer = setInterval(talk, 1000);
 };
 
 const getMessagesRow = (page) => {
-  // function which calculates message position base on timecutoff
-  // > 30 s -> row 1 and so on
-  // funktsioon, mis arvutab ajalõigu alusel sõnumi asukoha baasi
-  // > 30 s -> rida 1 ja nii edasi
   return Math.floor(timeOnThePage[page] / timeCutOff);
 };
 
 const getComment = (page) => {
-  // get row of the message
-  // hankige sõnumi rida
   let row = getMessagesRow(page);
-  // use this row to retrive message from message object related to current page and time on the page
-  // if messages do not have message for this params than return random message from other category
-  // if row do not exists will run other sample
-  // kasutage seda rida praeguse lehe ja lehe ajaga seotud sõnumi objektilt sõnumi toomiseks
-  // kui sõnumitel pole selle parameetri jaoks teadet, tagastatakse juhuslik sõnum teisest kategooriast
-  // kui rida pole olemas, käivitatakse muu näidis
   return messages[page][row]
     ? messages[page][row].sample()
     : messages["other"].sample();
 };
 
 const setPageVisit = (page) => {
-  // set that user visited the page for the first time -> start straight talk
-  // määrake, et kasutaja külastas lehte esimest korda -> alusta otsest kõnet
   if (!pageVisit[page]) {
     talkStraight();
     pageVisit[page] = true;
   }
-  // if page was visited this function will not apply this effect again
-  // kui lehte külastati, see funktsioon seda efekti enam ei rakenda
 };
 
 const setPagePosition = (page) => {
-  // function which sets page position and starts all req functions like
-  // startPageTimer to calculate time on the current page and setPageVisited
-  // funktsioon, mis määrab lehe asukoha ja käivitab kõik req funktsioonid nagu
-  // startPageTimer, et arvutada praegusel lehel aega ja määrataPageVisited
   currentPosition = page;
   startPageTimer(page);
   setPageVisit(page);
 };
 
-// init timer and home timer on page init stage
-// init taimer ja kodutaimer lehel init etapis
 let timer = setInterval(talk, firstTalk);
-let pageTimer, boxTimeOut;
+
 startPageTimer("home");
 
 const scrollEvent = () => {
-  // scroll event function which is trigered on scroll
-  // this function also check on which page user located at this moment and allow to
-  // trigger diffirent events based on position on the page
-
-  // to get page diff we use simple math if we know users screen height than second page this value by 2
-  // ofcourse there is a lot of diffirent oportunietises to create this functionality
-  // sündmuse kerimisfunktsioon, mis käivitub kerimisel
-  // see funktsioon kontrollib ka, millisel lehel kasutaja hetkel asub ja lubab seda teha
-  // käivitavad erinevad sündmused, mis põhinevad positsioonil lehel
-
-  // lehe erinevuse saamiseks kasutame lihtsat matemaatikat, kui teame kasutaja ekraani kõrgust kui teise lehe kõrgust 2 võrra
-  // loomulikult on selle funktsiooni loomiseks palju erinevaid võimalusi
   if (scroller.scrollTop == 1) {
     setPagePosition("home");
   }
@@ -260,7 +332,6 @@ const scrollEvent = () => {
   }
 };
 
-//
 scroller.addEventListener("scroll", scrollEvent);
 
 window.addEventListener(
