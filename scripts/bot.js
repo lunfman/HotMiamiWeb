@@ -256,7 +256,7 @@ const boxPopUp = () => {
 
 const boxHide = () => {
   talkBox.style.display = "none";
-  mask.src = "./assets/mask/mask.png";
+  mask.src = "./assets/mask/mask.webp";
 };
 
 const resetTimer = () => {
