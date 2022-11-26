@@ -228,17 +228,17 @@ video#bgvideo {
 
 #hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("../assets/bg/section_1.jpeg");
+    url("../assets/bg/section_1.webp");
 }
 
 #hero-image-2 {
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-    url("../assets/bg/section_2.jpeg");
+    url("../assets/bg/section_2.webp");
 }
 
 #hero-image-3 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-    url("../assets/bg/section_3.jpeg");
+    url("../assets/bg/section_3.webp");
 }
 
 /* box styles */
@@ -464,7 +464,7 @@ img.sticky {
   justify-content: center;
   background-color: black;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-    url("../assets/bg/footer.png");
+    url("../assets/bg/footer.webp");
   /*  */
 }
 
