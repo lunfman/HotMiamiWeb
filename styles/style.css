@@ -228,17 +228,17 @@ video#bgvideo {
 
 #hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("https://cdn.vox-cdn.com/thumbor/lsvKWScLlH-e2SwsURTrCq77Qvc=/0x0:1440x768/1200x800/filters:focal(605x269:835x499)/cdn.vox-cdn.com/uploads/chorus_image/image/61159511/hlm2_screen_5.0.1488285215.0.png");
+    url("../assets/bg/section_1.jpeg");
 }
 
 #hero-image-2 {
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-    url("https://media.moddb.com/images/mods/1/38/37508/SUBWAY.jpg");
+    url("../assets/bg/section_2.jpeg");
 }
 
 #hero-image-3 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-    url("https://3dnews.ru/assets/external/illustrations/2019/08/20/992757/HotlineMiamiCollection_1.jpg");
+    url("../assets/bg/section_3.jpeg");
 }
 
 /* box styles */
@@ -464,7 +464,7 @@ img.sticky {
   justify-content: center;
   background-color: black;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-    url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f19dc2f7-eebb-4bb0-9e32-f77d0b9301a1/dbfprzm-93e0b97e-a3db-42f5-8611-929e40092df7.png/v1/fill/w_960,h_720,strp/blood_splatter__transparent__by_pendulumwing_dbfprzm-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZjE5ZGMyZjctZWViYi00YmIwLTllMzItZjc3ZDBiOTMwMWExXC9kYmZwcnptLTkzZTBiOTdlLWEzZGItNDJmNS04NjExLTkyOWU0MDA5MmRmNy5wbmciLCJ3aWR0aCI6Ijw9OTYwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.46ZmWyT7jNi_mDoXZyCP4KfyUClxsoqFFAliHwBubfg");
+    url("../assets/bg/footer.png");
   /*  */
 }
 
