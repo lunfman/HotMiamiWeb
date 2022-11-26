@@ -251,7 +251,7 @@ const countVisitTime = (value) => {
 
 const boxPopUp = () => {
   talkBox.style.display = "block";
-  mask.src = "./assets/mask/speak.gif";
+  mask.src = "./assets/mask/speak.webp";
 };
 
 const boxHide = () => {
