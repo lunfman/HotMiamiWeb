@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Retro";
-  src: url("../assets/font/retro_computer_personal_use.ttf"); /*URL to font*/
+  src: url("../assets/font/retro_computer_personal_use.ttf");
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -93,26 +93,3 @@ body {
   line-height: 35px;
   text-align: center;
 }
-/* @keyframes move-bg {
-    to {
-      background-position: var(--bg-size) 0;
-    }
-  }
-.linear-wipe{
-    --bg-size: 300%;
-    --color-one: rgba(247,101,184);
-    --color-two: rgba(39,253,245);
-    font-size: 20px;
-    font-family: Retro;
-    background: linear-gradient(
-                90deg,
-                var(--color-one),
-                var(--color-two),
-                var(--color-one)
-              ) 0 0 / var(--bg-size) 100%;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: move-bg 8s infinite linear;
-    text-shadow: 2px 2px rgba(255, 255, 255, 0.5) 
-} */

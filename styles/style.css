@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Retro";
-  src: url("../assets/font/retro_computer_personal_use.ttf"); /*URL to font*/
+  src: url("../assets/font/retro_computer_personal_use.ttf");
 }
 
 * {
@@ -14,8 +14,6 @@ header,
 nav,
 main,
 footer {
-  /* margin: 0;
-  padding: 0; */
   border: 0;
   scroll-behavior: smooth;
   overflow: hidden;
@@ -40,9 +38,7 @@ nav {
 #nav-title {
   font-size: 1.5em;
   vertical-align: top;
-  /* float: left; */
   margin-right: auto;
-  /* width: 10px; */
 }
 
 nav ul {
@@ -54,7 +50,6 @@ nav ul {
 nav li {
   list-style: none;
   padding: 0px;
-  /* padding: 0 20px; */
   height: 4em;
   background-color: red;
   text-align: center;
@@ -111,7 +106,6 @@ div.inline {
   padding-left: 8%;
   white-space: nowrap;
   align-items: center;
-  /* margin-left: 4px; */
 }
 
 .nav-sub-big {
@@ -125,7 +119,6 @@ div.inline {
 div.inline p {
   color: white;
   margin-left: 2px;
-
   margin-top: 6px;
 }
 
@@ -345,7 +338,6 @@ img.sticky {
   align-items: center;
   overflow-x: hidden;
   text-align: center;
-  /* scroll-behavior: smooth; */
 }
 
 /* content container which allow to scroll inside of snap container */
@@ -356,8 +348,6 @@ img.sticky {
 }
 
 .music-container {
-  /* margin: -50px; */
-  /* padding: 20px; */
   flex-direction: row;
   flex-wrap: wrap;
   gap: 30px;
@@ -386,22 +376,13 @@ img.sticky {
 
 .outer-background {
   background-color: red;
-  /* width: 250px;
-  height: 250px;
-  border-radius: 50%; */
   margin-top: 4%;
   margin-bottom: 2%;
-  /* border: solid 2px white; */
 }
 
 /* main background of the disk */
 #hero-music .album {
   position: relative;
-  /* overflow-y: hidden; */
-  /* border-radius: 50%;
-  width: 250px;
-  height: 250px; */
-  /* border: solid 2px white; */
   background-size: cover;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
@@ -418,21 +399,6 @@ img.sticky {
   animation-name: spin;
 }
 
-/* image styles inside of hero-music */
-/* #hero-music img {
-  border-radius: 50%;
-  max-width: 350px;
-  width: 500px;
-  mix-blend-mode: difference;
-  border: solid 2px white;
-} */
-
-/* remove scrollbar fro */
-/* ::-webkit-scrollbar {
-  width: 0; 
-  display: none;
-} */
-
 /* dot - black dot in the center of the disk */
 .dot {
   height: 60px;
@@ -443,12 +409,10 @@ img.sticky {
   align-items: center;
   justify-content: center;
   position: relative;
-  /* z-index: 2; */
   border: solid 3px white;
 }
 
 /* music section hover effects */
-
 #hero-music .album:hover {
   mix-blend-mode: difference;
 }
@@ -464,23 +428,9 @@ img.sticky {
   display: block;
 }
 
-/* #hero-music .album:hover .playing {
-  mix-blend-mode: normal;
-  display: block;
-} */
-
 #hero-music .album.stop:hover .dot {
   background-color: red;
 }
-
-/* section different elements  */
-/* play and pause btn styles */
-/* #hero-music .dot #play {
-  border: 0;
-  width: 35px;
-  height: 35px;
-  border-radius: 0px;
-} */
 
 #hero-music .album .play {
   width: 60%;
