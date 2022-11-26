@@ -274,7 +274,6 @@ const talk = () => {
 };
 
 const talkStraight = () => {
-  t;
   resetTimer();
   timer = setInterval(talk, 1000);
 };
