@@ -258,9 +258,12 @@ video#bgvideo {
 
 .box-title-right,
 .box-title {
-  font-size: 3.5rem;
-  line-height: 3.5rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
   transition-duration: 0.5s;
+  font-family: Retro;
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
 }
 
 .box-title-right {
@@ -559,10 +562,10 @@ svg {
 
 /* media queries for elements after navbar */
 @media only screen and (max-width: 798px) {
-  .box-title,
+  /* .box-title,
   .box-title-right {
-    font-size: 3rem;
-  }
+    font-size: 2.5rem;
+  } */
 
   .box-title-right {
     left: -100px;
@@ -604,7 +607,7 @@ svg {
 @media only screen and (max-width: 320px) {
   .box-title,
   .box-title-right {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
     white-space: pre-wrap;
     line-height: normal;
     top: 0px;
