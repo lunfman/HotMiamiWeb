@@ -11,9 +11,9 @@ Lehe eesmärk - näidata, et see on äge mäng ning potentsiaalselt müüa mäng
 uutele mängijatele.
 
 Meil on planeeritud teha 3 lehte:
-1. Pealeht (Home Page)
-2. Vanuse kontrolli leht (Age control Page)
-3. Ei ole lubatud leht (Access denied Page)
+1. Pealeht (Home Page) - Oleg Savik 
+2. Vanuse kontrolli leht (Age control Page) - Andrei Kuznetsov
+3. Ei ole lubatud leht (Access denied Page) - Andrei Kuznetsov
 
 Meie eesmärgid:
 1. Viia projekti lõppuni eekujulikus seisus ning esitada õigel ajal.
