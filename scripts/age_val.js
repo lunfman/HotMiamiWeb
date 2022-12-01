@@ -76,6 +76,10 @@ const validate = (arr) => {
   const date = new Date(year, month - 1, day);
   const today = new Date();
 
+  if (month > 12 || month < 1 || day > 31 || day < 1){
+    return false;
+  }
+  
   // https://stackoverflow.com/questions/3224834/get-difference-between-2-dates-in-javascript
   const diffTime = today - date;
   const YearsDiff = diffTime / (1000 * 60 * 60 * 24) / 360;
