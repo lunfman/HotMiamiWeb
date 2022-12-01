@@ -3,8 +3,7 @@
 Veebileht videomängu kohta. Kuna meie arutelu käigus ilmus välja mäng "Hotline
 Miami" ja meil tuli meelde fanpage’i teha.
 
-<img width="600" alt="Screenshot 2022-12-01 at 13 13 08" src="https://user-images.githubusercontent.com/89738691/205041266-97bd948d-30c6-4a6a-abeb-da4ba0a48008.png">
-
+![image](https://user-images.githubusercontent.com/89738691/205106889-f2c4d3ca-7e1c-4a16-b532-cdb5fa18e773.gif)
 
 ## Plaan
 Esialgselt leht peaks olema äge ja silmatorkav. Leheküljel on videod, pildid "toxic"
