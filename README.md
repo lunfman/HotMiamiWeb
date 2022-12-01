@@ -3,7 +3,7 @@
 Veebileht videomängu kohta. Kuna meie arutelu käigus ilmus välja mäng "Hotline
 Miami" ja meil tuli meelde fanpage’i teha.
 
-<img width="700" alt="Screenshot 2022-12-01 at 13 13 08" src="https://user-images.githubusercontent.com/89738691/205041266-97bd948d-30c6-4a6a-abeb-da4ba0a48008.png">
+<img width="600" alt="Screenshot 2022-12-01 at 13 13 08" src="https://user-images.githubusercontent.com/89738691/205041266-97bd948d-30c6-4a6a-abeb-da4ba0a48008.png">
 
 
 ## Plaan
