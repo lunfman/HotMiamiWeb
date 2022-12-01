@@ -18,6 +18,7 @@ Meil on planeeritud teha 3 lehte:
 1. Pealeht (Home Page) - Oleg Savik 
 2. Vanuse kontrolli leht (Age control Page) - Andrei Kuznetsov
 3. Ei ole lubatud leht (Access denied Page) - Andrei Kuznetsov
+![ezgif-3-900ad0a9c4](https://user-images.githubusercontent.com/116276429/205043923-c90de706-e14e-41aa-aa26-8b3ba8b29e09.gif)
 
 Meie eesmärgid:
 1. Viia projekti lõppuni eekujulikus seisus ning esitada õigel ajal.
