@@ -92,6 +92,5 @@ const playSong = (element, name) => {
 };
 
 el.forEach((album, index) => {
-  console.log(music[index]);
   album.addEventListener("click", playSong.bind(null, album, music[index]));
 });
